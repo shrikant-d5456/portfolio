@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  color: rgb(255, 255, 255);
+  font-family: "Poppins", sans-serif;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+}
+
+
+/* live animation */
+.blue {
+  background: #0bd6ff;
+}
+
+.center {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+}
+
+.circle {
+  width: 14px;
+  height: 14px;
+  border-radius: 100%;
+  box-shadow: 0px 0px 1px 1px #00eeff1a;
+}
+
+.pulse {
+  animation: pulse-animation 1s infinite;
+}
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0px rgba(0, 183, 255, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 15px rgba(0, 174, 255, 0.185);
+  }
+}
+
+input[type="range"] {
+  accent-color: rgb(95, 191, 255);
+}
+
+.anime {
+  background-size: 400%;
+  background-image: linear-gradient(to right, #d8d8d800 10%, #d8d8d800 20%, #d8d8d800 30%, #d8d8d800 40%, hsl(191, 100%, 83%) 50%, #d8d8d800 60%, #d8d8d800 70%, #d8d8d800 80%, #d8d8d800 90%, #cfcfcf00 100%);
+  animation: shimmer 5s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: 0%;
+  }
+}
+
+.box {
+  --angle: -90deg;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: 1px solid;
+  border-image: conic-gradient(from var(--angle), rgb(168 239 255), rgb(168 239 255 / 10%)) 1;
+  animation: 5s rotate linear infinite;
+}
+@keyframes rotate {
+  to {
+    --angle: 90deg;
+  }
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.dot {
+  width: 14px;
+  height: 11px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 200px 0px 200px 0px;
+  -webkit-border-radius: 200px 0px 200px 0px;
+  -moz-border-radius: 200px 0px 200px 0px;
+  box-shadow: -4px 1px 20px 10px rgb(123, 231, 255);
+  -webkit-box-shadow: -4px 1px 20px 10px rgb(0, 208, 255);
+  -moz-box-shadow: -4px 1px 20px 10px #8beaff;
+  border-image: conic-gradient(from var(--angle), rgb(168 239 255), rgb(168 239 255 / 10%)) 1;
+  animation: 20s goes linear infinite;
+}
+
+@keyframes goes {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.inp {
+  padding: 8px;
+  margin: 8px 0px 8px 8px;
+  outline: none;
+  font-size: small;
+  color: rgb(168, 239, 255);
+  background-color: transparent;
+  border: 1px solid rgb(168, 239, 255);
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.container .card {
+  position: relative;
+  width: 290px;
+  height: 250px;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 600px) {
+  .container .card {
+    width: 100%;
+    height: 250px;
+  }
+}
+
+.container .card:before {
+  content: '';
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  transform: translate(-50%, -50%);
+  background: radial-gradient(var(--clr), transparent, transparent);
+  width: 400px;
+  height: 400px;
+  opacity: 0;
+  transition: 0.5s, top 0s, left 0s;
+}
+
+.container .card:hover:before {
+  opacity: 1;
+}
+
+.container .card:after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+}
+
+#stars {
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: 483px 450px #FFF, 1995px 525px #FFF, 755px 1459px #FFF, 610px 1246px #FFF, 764px 1850px #FFF, 1274px 1697px #FFF, 1227px 37px #FFF, 1090px 506px #FFF, 341px 1005px #FFF, 1002px 755px #FFF, 693px 1497px #FFF, 1797px 1626px #FFF, 1838px 793px #FFF, 802px 881px #FFF, 1117px 1983px #FFF, 352px 1465px #FFF, 1526px 852px #FFF, 1559px 526px #FFF, 517px 516px #FFF, 1380px 244px #FFF, 662px 1531px #FFF, 1544px 518px #FFF, 253px 879px #FFF, 774px 1629px #FFF, 752px 994px #FFF, 1129px 726px #FFF, 232px 1050px #FFF, 1766px 290px #FFF, 1976px 842px #FFF, 662px 1535px #FFF, 257px 1016px #FFF, 665px 708px #FFF, 1476px 1772px #FFF, 261px 498px #FFF, 719px 1459px #FFF, 469px 438px #FFF, 994px 474px #FFF, 744px 808px #FFF, 1609px 1741px #FFF, 898px 260px #FFF, 1978px 1436px #FFF, 904px 1244px #FFF, 123px 773px #FFF, 6px 923px #FFF, 1973px 1778px #FFF, 1470px 1861px #FFF, 1037px 156px #FFF, 554px 1905px #FFF, 1508px 849px #FFF, 1213px 1603px #FFF, 87px 1907px #FFF, 492px 527px #FFF, 91px 213px #FFF, 492px 15px #FFF, 1357px 1157px #FFF, 637px 240px #FFF, 1515px 281px #FFF, 1757px 682px #FFF, 1035px 1298px #FFF, 1019px 1233px #FFF, 25px 162px #FFF, 262px 884px #FFF, 1328px 965px #FFF, 984px 879px #FFF, 1213px 689px #FFF, 623px 1091px #FFF, 1227px 422px #FFF, 1977px 1025px #FFF, 620px 474px #FFF, 528px 1525px #FFF;
+  animation: animStar 50s linear infinite;
+}
+
+#stars:after {
+  content: " ";
+  position: absolute;
+  top: 2000px;
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: 483px 450px #FFF, 1995px 525px #FFF, 755px 1459px #FFF, 610px 1246px #FFF, 764px 1850px #FFF, 1274px 1697px #FFF, 1227px 37px #FFF, 1090px 506px #FFF, 341px 1005px #FFF, 1002px 755px #FFF, 693px 1497px #FFF, 1797px 1626px #FFF, 1838px 793px #FFF, 802px 881px #FFF, 1117px 1983px #FFF, 352px 1465px #FFF, 1526px 852px #FFF, 1559px 526px #FFF, 517px 516px #FFF, 1380px 244px #FFF, 662px 1531px #FFF, 1544px 518px #FFF, 253px 879px #FFF, 774px 1629px #FFF, 752px 994px #FFF, 1129px 726px #FFF, 232px 1050px #FFF, 1766px 290px #FFF, 1976px 842px #FFF, 662px 1535px #FFF, 257px 1016px #FFF, 665px 708px #FFF, 1476px 1772px #FFF, 261px 498px #FFF, 719px 1459px #FFF, 469px 438px #FFF, 994px 474px #FFF, 744px 808px #FFF, 1609px 1741px #FFF, 898px 260px #FFF, 1978px 1436px #FFF, 904px 1244px #FFF, 123px 773px #FFF, 6px 923px #FFF, 1973px 1778px #FFF, 1470px 1861px #FFF, 1037px 156px #FFF, 554px 1905px #FFF, 1508px 849px #FFF, 1213px 1603px #FFF, 87px 1907px #FFF, 492px 527px #FFF, 91px 213px #FFF, 492px 15px #FFF, 1357px 1157px #FFF, 637px 240px #FFF, 1515px 281px #FFF, 1757px 682px #FFF, 1035px 1298px #FFF, 1019px 1233px #FFF, 25px 162px #FFF, 262px 884px #FFF, 1328px 965px #FFF, 984px 879px #FFF, 1213px 689px #FFF, 623px 1091px #FFF, 1227px 422px #FFF, 1977px 1025px #FFF, 620px 474px #FFF, 528px 1525px #FFF;
+}
+
+#stars2 {
+  width: 14px;
+  height: 11px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 200px 0px 200px 0px;
+  -webkit-border-radius: 200px 0px 200px 0px;
+  -moz-border-radius: 200px 0px 200px 0px;
+  box-shadow: -4px 1px 20px 10px rgb(123, 231, 255);
+  -webkit-box-shadow: -4px 1px 20px 10px rgb(0, 208, 255);
+  -moz-box-shadow: -4px 1px 20px 10px #8beaff;
+  border-image: conic-gradient(from var(--angle), rgb(168 239 255), rgb(168 239 255 / 10%)) 1;
+    animation: animStar 100s linear infinite;
+}
+
+#stars2:after {
+  content: " ";
+  position: absolute;
+  top: 2000px;
+  width: 14px;
+  height: 11px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 200px 0px 200px 0px;
+  -webkit-border-radius: 200px 0px 200px 0px;
+  -moz-border-radius: 200px 0px 200px 0px;
+  box-shadow: -4px 1px 20px 10px rgb(123, 231, 255);
+  -webkit-box-shadow: -4px 1px 20px 10px rgb(0, 208, 255);
+  -moz-box-shadow: -4px 1px 20px 10px #8beaff;
+  border-image: conic-gradient(from var(--angle), rgb(168 239 255), rgb(168 239 255 / 10%)) 1;
+  }
+
+#stars3 {
+  width: 14px;
+  height: 11px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 200px 0px 200px 0px;
+  -webkit-border-radius: 200px 0px 200px 0px;
+  -moz-border-radius: 200px 0px 200px 0px;
+  box-shadow: -4px 1px 20px 10px rgb(123, 231, 255);
+  -webkit-box-shadow: -4px 1px 20px 10px rgb(0, 208, 255);
+  -moz-box-shadow: -4px 1px 20px 10px #8beaff;
+  border-image: conic-gradient(from var(--angle), rgb(168 239 255), rgb(168 239 255 / 10%)) 1;
+    animation: animStar 150s linear infinite;
+}
+
+#stars3:after {
+  content: " ";
+  position: absolute;
+  top: 2000px;
+  width: 14px;
+  height: 11px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 200px 0px 200px 0px;
+  -webkit-border-radius: 200px 0px 200px 0px;
+  -moz-border-radius: 200px 0px 200px 0px;
+  box-shadow: -4px 1px 20px 10px rgb(123, 231, 255);
+  -webkit-box-shadow: -4px 1px 20px 10px rgb(0, 208, 255);
+  -moz-box-shadow: -4px 1px 20px 10px #8beaff;
+  border-image: conic-gradient(from var(--angle), rgb(168 239 255), rgb(168 239 255 / 10%)) 1;
+  }
+
+
+@keyframes animStar {
+  from {
+    transform: translateY(0px);
+  }
+
+  to {
+    transform: translateY(-2000px);
+  }
+}
