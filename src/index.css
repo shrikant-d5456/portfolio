@@ -106,6 +106,14 @@ input[type="range"] {
   }
 }
 
+.bluedot{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #8beaff;
+  margin: 2px;
+}
+
 .inp {
   padding: 8px;
   margin: 8px 0px 8px 8px;
@@ -250,4 +258,21 @@ input[type="range"] {
   to {
     transform: translateY(-2000px);
   }
+}
+
+.lable{
+  display: none;
+}
+
+.label{
+  display: none;
+}
+
+text.current-value{
+  font-size: 10px;
+  fill: rgb(255 255 255);
+}
+
+svg.speedometer{
+  display: flex;
 }

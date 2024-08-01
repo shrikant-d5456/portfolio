@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import projectData from '../Data/ProjectData';
 import { BsGithub } from 'react-icons/bs'
-
+import ReactSpeedometer from "react-d3-speedometer/slim"
 
 const Card = ({ color, children }) => {
   const [position, setPosition] = useState({ x: 0, y: 0 });

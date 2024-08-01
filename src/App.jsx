@@ -1,6 +1,7 @@
 import React from 'react'
 import HeroSection from './pages/HeroSection'
 import Skill from './pages/Skill'
+import Work from './pages/Work'
 import Education from './pages/Education'
 import Project from './pages/Project'
 import Contact from './pages/Contact'
@@ -14,6 +15,7 @@ const App = () => {
     <BgAnime/>
     <Navbar/>
     <HeroSection/>
+    <Work/>
     <Skill/>
     <Education/>
     <Project/>
