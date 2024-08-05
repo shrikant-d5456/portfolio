@@ -57,7 +57,7 @@ const Skill = () => {
 
                 <span className='w-20 lg:ml-0 ml-10 border-[1px] border-[#a8efff]'></span>
 
-                <div className='border w-full border-[#a8efff] text-center p-2 rounded-sm shadow-md'>
+                <div className='border w-full dark:bg-[#8beaff] border-[#a8efff] text-center p-2 rounded-sm shadow-md'>
 
                   <div className='flex justify-between mx-2 '>
                     <p className='font-semibold'>{element.skill_name}</p>      
@@ -66,7 +66,7 @@ const Skill = () => {
 
                   <hr className='my-1 border-none' />
 
-                  <p className='text-justify'>{element.desc}
+                  <p className='text-justify '>{element.desc}
                   </p>
                   <div className='dot relative z-10 top-2'></div>
                 </div>

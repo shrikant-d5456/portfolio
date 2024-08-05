@@ -32,7 +32,7 @@ const Work = () => {
                 <div className='bluedot'></div>
               </div>
 
-              <div className=' border-dashed border-[1px] border-white w-full'></div>
+              <div className=' border-dashed border-[1px] border-white  dark:border-black  w-full'></div>
 
               <div className='border-2 border-white rounded-full mr-4'>
                 <div className='bluedot'></div>
@@ -51,7 +51,7 @@ const Work = () => {
 
               <div>
                 <p className=' text-xl font-semibold'>{element.company_name}</p>
-                <p className=' text-sm bg-[#196c7f] px-2 py-[1px] rounded-full my-1 text'>{element.role}</p>
+                <p className=' text-sm bg-[#196c7f] px-2 py-[1px] rounded-full my-1 text-white  '>{element.role}</p>
               </div>
 
             </div>

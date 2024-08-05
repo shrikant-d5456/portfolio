@@ -1,9 +1,11 @@
 import React from 'react'
+import DarkMode from './DarkMode'
 
 const Home = () => {
+
   return (
     <div className='w-full flex-col justify-center items-center mt-[90px]  '>
-
+      <DarkMode/>
       <div className='w-11/12 lg:flex md:flex flex-row justify-center items-center m-auto mb-5'>
         <div className='anime lg:w-[300px] h-[300px] w-[300px] md:m-0 m-auto rounded-full p-4 border-[#a8efff] '
         >

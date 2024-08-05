@@ -5,13 +5,21 @@
 @tailwind utilities;
 
 body {
-  color: rgb(255, 255, 255);
   font-family: "Poppins", sans-serif;
   background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  background-repeat: no-repeat;  
 }
 
+
+/* .bg-light-gradient {
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  color: white;
+}
+
+.bg-dark-gradient {
+  background: radial-gradient(ellipse at bottom, #ffffff 0%, #ffffff 100%);
+  color: #090a0f;
+} */
 
 /* live animation */
 .blue {
@@ -119,7 +127,7 @@ input[type="range"] {
   margin: 8px 0px 8px 8px;
   outline: none;
   font-size: small;
-  color: rgb(168, 239, 255);
+  color: rgb(26, 115, 156);
   background-color: transparent;
   border: 1px solid rgb(168, 239, 255);
   width: 100%;

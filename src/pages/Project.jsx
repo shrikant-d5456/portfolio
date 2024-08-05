@@ -39,11 +39,11 @@ const Card = ({ color, children }) => {
         
         <a href={children.gitLink} target="_blank" rel="noopener noreferrer">
           <div className='absolute top-2 left-2 z-10 rounded-full text-md font-semibold w-fit bg-black/80 p-2'>
-            <BsGithub className='text-xl' />
+            <BsGithub className='text-xl text-white ' />
           </div>
         </a>
 
-        <div className='absolute top-[64%]  bg-black/40 text-md font-semibold p-2'>
+        <div className='absolute top-[64%] text-white  bg-black/40 text-md font-semibold p-2'>
           {children.projectName}
         </div>
       </div>
@@ -53,7 +53,7 @@ const Card = ({ color, children }) => {
 
 const Project = () => {
   return (
-    <div className='w-10/12 m-auto mt-10 '>
+    <div className='lg:w-10/12 m-auto mt-10 p-2 lg:p-1 '>
       <p className='text-2xl font-extrabold'>Project's</p>
       <hr className='my-4' />
       <div className='flex justify-center items-center'>
