@@ -6,10 +6,31 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background-size: 100% 100%;
+  /* background-size:cover; */
   background-repeat: no-repeat;  
 }
 
+
+
+.moving {
+  display: flex;
+  position: relative;
+  white-space: nowrap;
+  animation: scroll-horizontal 20s linear infinite;
+}
+
+.moving i {
+  flex-shrink: 0;
+}
+
+@keyframes scroll-horizontal {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 
 /* .bg-light-gradient {
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
@@ -26,6 +47,9 @@ body {
   background: #0bd6ff;
 }
 
+.violet{
+  background: #f78dff; 
+}
 .center {
   display: flex;
   justify-content: space-evenly;
@@ -42,6 +66,19 @@ body {
 
 .pulse {
   animation: pulse-animation 1s infinite;
+}
+
+.pulse2 {
+  animation: pulse-animation2 1s infinite;
+}
+
+@keyframes pulse-animation2 {
+  0% {
+    box-shadow: 0 0 0 0px rgba(240, 168, 255, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 15px rgba(245, 157, 255, 0.185);
+  }
 }
 @keyframes pulse-animation {
   0% {

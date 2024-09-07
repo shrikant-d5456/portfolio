@@ -3,11 +3,11 @@ import React from 'react'
 const Contact = () => {
   return (
     <>
-      <div className='flex-col m-auto lg:w-10/12 lg:p-8 lg:my-8 text-sm lg:text-base mt-10'>
+      <div className='lg:w-8/12 md:w-11/12 w-full flex-col m-auto my-4 mt-[1%] text-sm lg:text-base'>
       <p className='text-2xl font-extrabold lg:ml-0 ml-4'>Contact Now</p><hr className='my-4' />
 
         <div className='w-full h-[300px] flex m-auto my-4 '>
-          <iframe  className='w-full h-full rounded-md' frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Mangaon&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
+          <iframe  className='w-full h-full rounded-md outline-none' frameBorder="0" src="https://www.google.com/maps/embed/v1/place?q=Mangaon&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
         </div>
 
         <div className=' w-full lg:flex m-auto'>
@@ -44,12 +44,12 @@ const Contact = () => {
           <p className='text-xl font-semibold m-2'>Send  Message </p><hr className='my-4 ml-2 border-white'/>
 
           <form  action="https://formspree.io/f/mjkbygqk" method="POST">
-          <input className='inp' placeholder='Name' type="text" name='Name' required/>
+          <input className='inp dark:border-[#bc80c8] dark:text-violet-900' placeholder='Name' type="text" name='Name' required/>
 
-          <input className='inp' placeholder='Email' type="email" name="email" required/>
+          <input className='inp dark:border-[#bc80c8] dark:text-violet-900' placeholder='Email' type="email" name="email" required/>
 
-          <textarea className='inp' cols={4} rows={4} placeholder='Message' name="message" type="text" required/>
-          <button type='submit' className='ml-2 py-2 px-4 bg-[#00d0ff] font-semibold text-white'>Hire Me</button>
+          <textarea className='inp dark:border-[#bc80c8] dark:text-violet-900' cols={4} rows={4} placeholder='Message' name="message" type="text" required/>
+          <button type='submit' className='ml-2 py-2 px-4 dark:bg-[#e14eff] bg-[#00d0ff] font-semibold text-white'>Hire Me</button>
           </form>
           </div>
 

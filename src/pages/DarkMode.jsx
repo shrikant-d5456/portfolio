@@ -31,6 +31,8 @@ const DarkMode = () => {
       src={isDarkMode ? lightIcon : darkIcon}
       alt="Toggle Dark Mode"
       onClick={toggleDarkMode}
+
+      title={isDarkMode ? 'Switch to Night' : 'Switch to Morning'}
     />
   );
 };

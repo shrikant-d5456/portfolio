@@ -1,29 +1,38 @@
 import React from 'react'
 import DarkMode from './DarkMode'
 
+import {Bounce, Fade, Flip, Hinge, JackInTheBox, Roll, Rotate, Slide, Zoom } from 'react-awesome-reveal';
+
+
 const Home = () => {
 
   return (
-    <div className='w-full flex-col justify-center items-center mt-[90px]  '>
+    <div className='w-full flex-col justify-center items-center mt-[60px]  '>
       <DarkMode/>
       <div className='w-11/12 lg:flex md:flex flex-row justify-center items-center m-auto mb-5'>
-        <div className='anime lg:w-[300px] h-[300px] w-[300px] md:m-0 m-auto rounded-full p-4 border-[#a8efff] '
+
+      <JackInTheBox triggerOnce>
+        <div className='anime lg:w-[300px] h-[300px] w-[300px] md:m-0 m-auto rounded-full  p-4 dark:bg-[#ffffff45] border-[#a8efff] '
         >
           <img
             className='h-full w-full object-cover rounded-full'
             src="https://2.bp.blogspot.com/-7VyC-X2pSrE/Vo0iGe_NX6I/AAAAAAAABGs/r8zGLJ1Anx4/s1600/CYAuUF_UoAATCw0.jpg" alt="" />
         </div>
+        </JackInTheBox>
 
         <div className='lg:w-1/3 md:w-2/3 w-full h-1/2 p-4 font-semibold'
         >
+          <Slide direction='up' triggerOnce>
           <p className='text-3xl font-bold mt-4'>Hey, I'm Shrikant Dalvi</p>
-          <p className='text-xl my-2'>Passionated to <span className='font-extrabold text-[#2cd6fc]'>Frontend Developer</span> and <span className='font-extrabold text-[#2cd6fc]'>Ui Designer</span></p>
-
+          <p className='text-xl my-2'>Passionated to <span className='font-extrabold dark:text-[#f59cff] text-[#2cd6fc]'>Frontend Developer</span> and <span className='font-extrabold dark:text-[#f59cff] text-[#2cd6fc]'>Ui Designer</span></p>
+          </Slide >
           <div>
             <hr />
-            <div className='dot w-fit relative bottom-[11px]'></div>
+            <div className='dot dark:shadow w-fit relative bottom-[11px]'></div>
           </div>
 
+
+          <Slide direction='up' triggerOnce>
           <div className='flex items-center'
           ><img
             className='w-5 h-5 mr-2 bg-white rounded-full'
@@ -31,11 +40,12 @@ const Home = () => {
             />
             <p className='text-md  my-2'>Mangaon, Raigad</p>
           </div>
+          </Slide>
 
           <div className='lg:flex-col my-4 font-semibold'>
-
             <div className='flex justify-between my-4'>
 
+            <Bounce damping={0.1} triggerOnce>
             <a href="/email" target="_blank" rel="noopener noreferrer">
               <div className='flex justify-center items-center gap-4'>
                <img
@@ -44,7 +54,9 @@ const Home = () => {
                 <p>Email</p>
               </div>
             </a>
+            </Bounce>
 
+            <Bounce damping={0.5} triggerOnce>
             <a href="/link" target="_blank" rel="noopener noreferrer">
               <div className='flex justify-center items-center gap-4'>
                 <img
@@ -53,10 +65,11 @@ const Home = () => {
                 <p>LinkedIn</p>
               </div>
               </a>
-
+              </Bounce>
             </div>
 
             <div className='flex justify-between'>
+            <Bounce damping={0.8} triggerOnce>
             <a href="https://github.com/shrikant-d5456" target="_blank" rel="noopener noreferrer">
               <div className='flex justify-center items-center gap-4'>
                 <img
@@ -65,7 +78,9 @@ const Home = () => {
                 <p>Github</p>
               </div>
               </a>
+              </Bounce>
 
+              <Bounce damping={1} triggerOnce>
               <a href="/telig" target="_blank" rel="noopener noreferrer">
               <div className='flex justify-center items-center gap-4'>
                 <img
@@ -74,6 +89,7 @@ const Home = () => {
                 <p>Teligram</p>
               </div>
               </a>
+              </Bounce>
 
             </div>
 
@@ -85,8 +101,9 @@ const Home = () => {
 
 {/* //About Section */}
 
+<Fade >
       <div className='w-full flex justify-center items-center'>
-        <div className='box lg:w-2/3 text-center p-4 '>
+        <div className='box lg:w-2/3 text-center p-4 backdrop-blur  '>
           <p className='text-2xl font-extrabold'>
           About Me 
           </p>
@@ -96,7 +113,7 @@ const Home = () => {
           </p>
         </div>
       </div>
-
+      </Fade>
     </div>
   )
 }

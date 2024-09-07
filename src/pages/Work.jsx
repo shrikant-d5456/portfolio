@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import work_data from '../Data/WorkData'
 
+import { Bounce, Fade, Flip, Hinge, JackInTheBox, Roll, Rotate, Slide, Zoom } from 'react-awesome-reveal';
+
 const Work = () => {
 
   const [length, setLength] = useState(4);
@@ -25,46 +27,48 @@ const Work = () => {
 
         {work_data.slice(0, length).map((element) => (
 
-          <div key={element.id} className=' py-4 lg:text-base text-sm'>
-            <div className='flex justify-between items-center text-sm my-4 '>
-              {element.start}
-              <div className='border-2 border-white rounded-full text-sm ml-4'>
-                <div className='bluedot'></div>
+          <Fade direction="left" triggerOnce>
+            <div key={element.id} className=' py-4 lg:text-base text-sm'>
+              <div className='flex justify-between items-center text-sm my-4 '>
+                {element.start}
+                <div className='border-2 border-white rounded-full text-sm ml-4'>
+                  <div className='bluedot dark:bg-[#bc80c8]'></div>
+                </div>
+
+                <div className=' border-dashed border-[1px] border-white  dark:border-black  w-full'></div>
+
+                <div className='border-2 border-white rounded-full mr-4'>
+                  <div className='bluedot dark:bg-[#bc80c8]'></div>
+                </div>
+                {element.end}
               </div>
 
-              <div className=' border-dashed border-[1px] border-white  dark:border-black  w-full'></div>
+              <div className='flex w-full justify-start items-center gap-4'>
 
-              <div className='border-2 border-white rounded-full mr-4'>
-                <div className='bluedot'></div>
+                <div className='lg:w-[50px] lg:h-[50px]  w-[50px] h-[50px] border-4 p-1 dark:border-[#e299ff99] border-[#8beaff] rounded-full'
+                >
+                  <img
+                    className='w-full h-full object-cover rounded-full '
+                    src={element.img} alt="loading.." />
+                </div>
+
+                <div>
+                  <p className=' text-xl font-semibold'>{element.company_name}</p>
+                  <p className=' text-sm dark:bg-[#5b1f76] bg-[#196c7f] px-2 py-[1px] rounded-full my-1 text-white  '>{element.role}</p>
+                </div>
+
               </div>
-              {element.end}
+
+              <div className=' my-4 mx-2 flex justify-start items-center gap-4'>
+                <div className='dot dark:shadow p-1 mx-4 md:block hidden'></div>
+                <p className='lg:text-base text-sm text-justify'>
+                  {element.desc}
+                </p>
+
+              </div>
+
             </div>
-
-            <div className='flex w-full justify-start items-center gap-4'>
-
-              <div className='lg:w-[50px] lg:h-[50px]  w-[50px] h-[50px] border-4 p-1 border-[#8beaff] rounded-full'
-              >
-                <img
-                  className='w-full h-full object-cover rounded-full '
-                  src={element.img} alt="loading.." />
-              </div>
-
-              <div>
-                <p className=' text-xl font-semibold'>{element.company_name}</p>
-                <p className=' text-sm bg-[#196c7f] px-2 py-[1px] rounded-full my-1 text-white  '>{element.role}</p>
-              </div>
-
-            </div>
-
-            <div className=' my-4 mx-2 flex justify-start items-center gap-4'>
-              <div className='dot p-1 mx-4 md:block hidden'></div>
-              <p className='lg:text-base text-sm text-justify'>
-                {element.desc}
-              </p>
-
-            </div>
-
-          </div>
+          </Fade >
         ))}
 
         {work_data.length > 4 &&
