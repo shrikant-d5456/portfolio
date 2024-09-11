@@ -19,7 +19,7 @@ const App = () => {
     <HeroSection/>
     <Work/>
     <Skill/>
-     /* <Education/> */
+      {/* <Education/> */}
     <Project/>
     <Compliment/>
     <Contact/>
