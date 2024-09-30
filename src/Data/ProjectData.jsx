@@ -31,7 +31,7 @@ const projectData = [
         gitLink:"https://github.com/shrikant-d5456/pattern_printing_app",
         webLink:"https://pattern-printing-app.vercel.app/",
         img:pattern,
-        projectName:"Enter Name to printting PATTERN in C++"
+        projectName:"Enter text to printting PATTERN in C++"
     },
     {
         gitLink:"https://github.com/shrikant-d5456/",
