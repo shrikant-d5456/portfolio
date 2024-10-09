@@ -18,7 +18,7 @@ const Shade = () => {
 
 
 
-                <div className=' absolute top-[90%] right-1'>
+                <div className=' absolute lg:top-[90%] md:top-[30%] top-[90%] right-1'>
                     <div className='shade-blue relative left-[130px] top-[-150px]'>
                     </div>
                     <div className='shade-blue relative left-[200px] top-[-100px]'>
