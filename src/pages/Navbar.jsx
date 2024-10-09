@@ -54,7 +54,11 @@ const Navbar = () => {
             {showDiv && (
               <div>
                 <Bounce>
+<<<<<<< HEAD
                 <button onClick={scrollToBottom} type='submit' className='anime bg-cyan-500 hover:bg-cyan-600   px-4 py-1  transition-all text-sm text-white'>Hire Me</button>
+=======
+                <button onClick={scrollToBottom} type='submit' className='ml-2 py-[2px] px-4 dark:bg-[#e14eff] bg-[#00d0ff] font-semibold text-white'>Hire Me</button>
+>>>>>>> 2cc492a021134d07cecf275f78d2c9bb5562491b
                 </Bounce>
               </div>
             )}

@@ -19,7 +19,11 @@ const App = () => {
     <HeroSection/>
     <Work/>
     <Skill/>
+<<<<<<< HEAD
     {/* <Education/> */}
+=======
+      {/* <Education/> */}
+>>>>>>> 2cc492a021134d07cecf275f78d2c9bb5562491b
     <Project/>
     <Compliment/>
     <Contact/>
