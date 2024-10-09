@@ -106,13 +106,13 @@ const Home = () => {
 {/* //About Section */}
 
 <Fade >
-<<<<<<< HEAD
+
       <div className='w-full flex justify-center items-center  '>
         <div className='box lg:w-2/3 text-center p-4 backdrop-blur  '>
-=======
+
       <div className='w-full flex justify-center items-center'>
         <div className='box lg:w-2/3 text-center p-4 backdrop-blur shadow-lg '>
->>>>>>> 2cc492a021134d07cecf275f78d2c9bb5562491b
+
           <p className='text-2xl font-extrabold'>
           About Me 
           </p>
