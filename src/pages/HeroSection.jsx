@@ -50,7 +50,7 @@ const Home = () => {
             <div className='  flex justify-between my-4'>
 
             <Bounce damping={0.1} triggerOnce>
-            <a href="/email" target="_blank" rel="noopener noreferrer">
+            <a href="mailto:dalvishrikant5456@gmail.com" target="_blank" rel="noopener noreferrer">
               <div className=' hover:text-cyan-500 flex justify-center items-center gap-4'>
                <img
                   className='w-10 h-10'
@@ -61,7 +61,7 @@ const Home = () => {
             </Bounce>
 
             <Bounce damping={0.5} triggerOnce>
-            <a href="/link" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/shrikant-dalvi-025ba4318/" target="_blank" rel="noopener noreferrer">
               <div className=' hover:text-cyan-500 flex justify-center items-center gap-4'>
                 <img
                   className='w-10 h-10'
@@ -85,7 +85,7 @@ const Home = () => {
               </Bounce>
 
               <Bounce damping={1} triggerOnce>
-              <a href="/telig" target="_blank" rel="noopener noreferrer">
+              <a href="https://telegram.org/dl" target="_blank" rel="noopener noreferrer">
               <div className=' hover:text-cyan-500 flex justify-center items-center gap-4'>
                 <img
                   className='w-10 h-10'
