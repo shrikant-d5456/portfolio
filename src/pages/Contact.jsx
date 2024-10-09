@@ -49,7 +49,7 @@ const Contact = () => {
           <input className='inp  ' placeholder='Email' type="email" name="email" required/>
 
           <textarea className='inp ' cols={4} rows={4} placeholder='Message' name="message" type="text" required/>
-          <button type='submit' className=' ml-2 anime bg-cyan-500 hover:bg-cyan-600   px-4 py-1  transition-all text-sm text-white'>Hire Me</button>
+          <button type='submit' className=' ml-2 anime bg-cyan-500 hover:bg-cyan-600 font-semibold px-4 py-1  transition-all text-sm text-white'>Hire Me</button>
           </form>
           </div>
 
