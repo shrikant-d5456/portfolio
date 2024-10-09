@@ -32,20 +32,20 @@ const Work = () => {
               <div className='flex justify-between items-center text-sm my-4 '>
                 {element.start}
                 <div className='border-2 border-white rounded-full text-sm ml-4'>
-                  <div className='bluedot dark:bg-[#bc80c8]'></div>
+                  <div className='bluedot '></div>
                 </div>
 
                 <div className=' border-dashed border-[1px] border-white  dark:border-black  w-full'></div>
 
                 <div className='border-2 border-white rounded-full mr-4'>
-                  <div className='bluedot dark:bg-[#bc80c8]'></div>
+                  <div className='bluedot '></div>
                 </div>
                 {element.end}
               </div>
 
               <div className='flex w-full justify-start items-center gap-4'>
 
-                <div className='lg:w-[50px] lg:h-[50px]  w-[50px] h-[50px] border-4 p-1 dark:border-[#e299ff99] border-[#8beaff] rounded-full'
+                <div className='lg:w-[50px] lg:h-[50px]  w-[50px] h-[50px] border-4 p-1  border-[#8beaff] rounded-full'
                 >
                   <img
                     className='w-full h-full object-cover rounded-full '
@@ -54,7 +54,7 @@ const Work = () => {
 
                 <div>
                   <p className=' text-xl font-semibold'>{element.company_name}</p>
-                  <p className=' text-sm dark:bg-[#5b1f76] bg-[#196c7f] px-2 py-[1px] rounded-full my-1 text-white  '>{element.role}</p>
+                  <p className=' text-sm  bg-[#196c7f] px-2 py-[1px] rounded-full my-1 text-white  '>{element.role}</p>
                 </div>
 
               </div>

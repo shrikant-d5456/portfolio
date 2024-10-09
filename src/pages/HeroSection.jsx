@@ -1,16 +1,20 @@
 import React from 'react'
 import DarkMode from './DarkMode'
-
 import {Bounce, Fade, Flip, Hinge, JackInTheBox, Roll, Rotate, Slide, Zoom } from 'react-awesome-reveal';
-
+import Shade from './Shade';
+import pdf from '../Data/resume.pdf';
 
 const Home = () => {
 
   return (
-    <div className='w-full flex-col justify-center items-center mt-[60px]  '>
+    <>
+    
+   <Shade/>
+    
+    <div className='w-full flex-col justify-center items-center mt-[60px] overflow-hidden '>
       <DarkMode/>
       <div className='w-11/12 lg:flex md:flex flex-row justify-center items-center m-auto mb-5'>
-
+      
       <JackInTheBox triggerOnce>
         <div className='anime lg:w-[300px] h-[300px] w-[300px] md:m-0 m-auto rounded-full  p-4 dark:bg-[#ffffff45] border-[#a8efff] '
         >
@@ -24,7 +28,7 @@ const Home = () => {
         >
           <Slide direction='up' triggerOnce>
           <p className='text-3xl font-bold mt-4'>Hey, I'm Shrikant Dalvi</p>
-          <p className='text-xl my-2'>Passionated to <span className='font-extrabold dark:text-[#f59cff] text-[#2cd6fc]'>Frontend Developer</span> and <span className='font-extrabold dark:text-[#f59cff] text-[#2cd6fc]'>Ui Designer</span></p>
+          <p className='text-xl my-2'>Passionated to <span className='font-extrabold  text-[#2cd6fc]'>Frontend Developer</span> and <span className='font-extrabold  text-[#2cd6fc]'>Ui Designer</span></p>
           </Slide >
           <div>
             <hr />
@@ -43,11 +47,11 @@ const Home = () => {
           </Slide>
 
           <div className='lg:flex-col my-4 font-semibold'>
-            <div className='flex justify-between my-4'>
+            <div className='  flex justify-between my-4'>
 
             <Bounce damping={0.1} triggerOnce>
             <a href="/email" target="_blank" rel="noopener noreferrer">
-              <div className='flex justify-center items-center gap-4'>
+              <div className=' hover:text-cyan-500 flex justify-center items-center gap-4'>
                <img
                   className='w-10 h-10'
                   src="https://cdn.iconscout.com/icon/free/png-512/free-email-mail-heart-like-love-newsletter-message-6-18160.png?f=webp&w=256" alt="" />
@@ -58,7 +62,7 @@ const Home = () => {
 
             <Bounce damping={0.5} triggerOnce>
             <a href="/link" target="_blank" rel="noopener noreferrer">
-              <div className='flex justify-center items-center gap-4'>
+              <div className=' hover:text-cyan-500 flex justify-center items-center gap-4'>
                 <img
                   className='w-10 h-10'
                   src="https://cdn.iconscout.com/icon/free/png-512/free-linkedin-3855922-3201556.png?f=webp&w=256" alt="" />
@@ -68,10 +72,10 @@ const Home = () => {
               </Bounce>
             </div>
 
-            <div className='flex justify-between'>
+            <div className=' flex justify-between'>
             <Bounce damping={0.8} triggerOnce>
             <a href="https://github.com/shrikant-d5456" target="_blank" rel="noopener noreferrer">
-              <div className='flex justify-center items-center gap-4'>
+              <div className=' hover:text-cyan-500 flex justify-center items-center gap-4 '>
                 <img
                   className='w-10 h-10 bg-white rounded-full'
                   src="https://cdn.iconscout.com/icon/free/png-512/free-github-5285244-4406681.png?f=webp&w=256" alt="" />
@@ -82,7 +86,7 @@ const Home = () => {
 
               <Bounce damping={1} triggerOnce>
               <a href="/telig" target="_blank" rel="noopener noreferrer">
-              <div className='flex justify-center items-center gap-4'>
+              <div className=' hover:text-cyan-500 flex justify-center items-center gap-4'>
                 <img
                   className='w-10 h-10'
                   src="https://cdn.iconscout.com/icon/free/png-512/free-telegram-3691230-3073750.png?f=webp&w=256" alt="" />
@@ -102,7 +106,7 @@ const Home = () => {
 {/* //About Section */}
 
 <Fade >
-      <div className='w-full flex justify-center items-center'>
+      <div className='w-full flex justify-center items-center  '>
         <div className='box lg:w-2/3 text-center p-4 backdrop-blur  '>
           <p className='text-2xl font-extrabold'>
           About Me 
@@ -111,10 +115,15 @@ const Home = () => {
           <p>
           I am a dedicated and passionate frontend developer with a strong foundation in creating user-centric and visually appealing web applications. Currently, I am pursuing a BTech in Information Technology at DBATU University, where I am in my fourth year of study. In addition to my academic pursuits, I am actively engaged in an internship as a frontend developer, working on the Scholarship Management System project. My responsibilities include designing Figma layouts, creating website interfaces, and developing pages using ReactJS.
           </p>
+          
+          <button className=' bg-cyan-500 hover:bg-cyan-600   py-1 mt-2 transition-all text-sm text-white'>
+            <a href={pdf} className='anime px-4 py-1'  download>Download Resume</a>
+          </button>
         </div>
       </div>
       </Fade>
     </div>
+    </>
   )
 }
 

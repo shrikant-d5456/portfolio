@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import lightIcon from '../assets/light.png';
 import darkIcon from '../assets/dark.png';
+import {Bounce, Fade, Flip, Hinge, JackInTheBox, Roll, Rotate, Slide, Zoom } from 'react-awesome-reveal';
+
 
 const DarkMode = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -26,14 +28,18 @@ const DarkMode = () => {
   };
 
   return (
+    <div className='absolute top-[1px] right-1 z-20'>
+    <Fade>
     <img
-      className="absolute top-[1px] right-1 z-20 w-[95px] h-[95px] cursor-pointer"
+      className=" w-[95px] h-[95px] cursor-pointer"
       src={isDarkMode ? lightIcon : darkIcon}
       alt="Toggle Dark Mode"
       onClick={toggleDarkMode}
 
       title={isDarkMode ? 'Switch to Night' : 'Switch to Morning'}
     />
+    </Fade>
+    </div>
   );
 };
 

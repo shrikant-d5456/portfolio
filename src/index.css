@@ -8,9 +8,25 @@ body {
   font-family: "Poppins", sans-serif;
   /* background-size:cover; */
   background-repeat: no-repeat;  
+  cursor: url("./assets/assist.png") ; 
+
+  /* background: aliceblue;
+    background-image: linear-gradient(to right, rgb(101, 102, 103)  1px,
+            transparent 1px), linear-gradient(to bottom, rgb(128, 128, 129)1px,
+            transparent 1px);
+    background-size: 4vh 4vh;
+    z-index: 1; */
+    
+    scroll-behavior: smooth;
 }
 
 
+.shade-blue{
+  width: 500px;
+    box-shadow: 1px 1px 300px #0bd6ff;
+    height: 69px;
+    rotate: 45deg;
+}
 
 .moving {
   display: flex;
@@ -109,16 +125,14 @@ input[type="range"] {
 }
 
 .box {
-  --angle: -90deg;
-  border-top-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  --angle: 0deg;
   border: 1px solid;
-  border-image: conic-gradient(from var(--angle), rgb(168 239 255), rgb(168 239 255 / 10%)) 1;
+  border-image: conic-gradient(from var(--angle), rgb(95, 226, 255), rgb(168 239 255 / 10%)) 1;
   animation: 5s rotate linear infinite;
 }
 @keyframes rotate {
   to {
-    --angle: 90deg;
+    --angle: 360deg;
   }
 }
 
@@ -164,7 +178,6 @@ input[type="range"] {
   margin: 8px 0px 8px 8px;
   outline: none;
   font-size: small;
-  color: rgb(26, 115, 156);
   background-color: transparent;
   border: 1px solid rgb(168, 239, 255);
   width: 100%;

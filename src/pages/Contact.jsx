@@ -43,13 +43,13 @@ const Contact = () => {
           <div className= 'lg:w-1/2 p-4 '>
           <p className='text-xl font-semibold m-2'>Send  Message </p><hr className='my-4 ml-2 border-white'/>
 
-          <form  action="https://formspree.io/f/mjkbygqk" method="POST">
-          <input className='inp dark:border-[#bc80c8] dark:text-violet-900' placeholder='Name' type="text" name='Name' required/>
+          <form  action="https://formspree.io/f/mjkbygqk" method="POST" className='dark:text-black text-white'>
+          <input className='inp  ' placeholder='Name' type="text" name='Name' required/>
 
-          <input className='inp dark:border-[#bc80c8] dark:text-violet-900' placeholder='Email' type="email" name="email" required/>
+          <input className='inp  ' placeholder='Email' type="email" name="email" required/>
 
-          <textarea className='inp dark:border-[#bc80c8] dark:text-violet-900' cols={4} rows={4} placeholder='Message' name="message" type="text" required/>
-          <button type='submit' className='ml-2 py-2 px-4 dark:bg-[#e14eff] bg-[#00d0ff] font-semibold text-white'>Hire Me</button>
+          <textarea className='inp ' cols={4} rows={4} placeholder='Message' name="message" type="text" required/>
+          <button type='submit' className=' ml-2 anime bg-cyan-500 hover:bg-cyan-600   px-4 py-1  transition-all text-sm text-white'>Hire Me</button>
           </form>
           </div>
 
