@@ -2,7 +2,7 @@ const work_data = [
     {
         id:2,
         img: "",
-        company_name: "Gov. Project @Dabtu",
+        company_name: "FEMS Project @Dabtu",
         role:"Frontend Developer Intern",
         start:"1/5/2024",
         end:"Present",
