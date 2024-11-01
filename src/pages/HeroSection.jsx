@@ -20,8 +20,9 @@ const Home = () => {
         >
           <img
             className='h-full w-full object-cover rounded-full'
-            src="https://2.bp.blogspot.com/-7VyC-X2pSrE/Vo0iGe_NX6I/AAAAAAAABGs/r8zGLJ1Anx4/s1600/CYAuUF_UoAATCw0.jpg" alt="" />
+            src="https://drive.google.com/file/d/1poXtfnt6JVOcxKVtTmEDlOJRxBnGsSPn/view" alt="" />
         </div>
+        
         </JackInTheBox>
 
         <div className='lg:w-1/3 md:w-2/3 w-full h-1/2 p-4 font-semibold'
@@ -103,7 +104,7 @@ const Home = () => {
       </div>
 
 
-{/* //About Section */}
+{/* //About Section   https://2.bp.blogspot.com/-7VyC-X2pSrE/Vo0iGe_NX6I/AAAAAAAABGs/r8zGLJ1Anx4/s1600/CYAuUF_UoAATCw0.jpg */}
 
 <Fade >
       <div className='w-full flex justify-center items-center'>
