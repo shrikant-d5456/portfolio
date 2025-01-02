@@ -43,11 +43,6 @@ const projectData = [
         img:scissorgame,
         projectName:"Pen Papper Sccisor Game"
     },
-    {
-        gitLink:"https://github.com/shrikant-d5456/",
-        img:news,
-        projectName:"News WebApp using Api key"
-    },
     
 
 ]

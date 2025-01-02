@@ -3,8 +3,8 @@ import React from 'react'
 const Contact = () => {
   return (
     <>
-      <div className='lg:w-8/12 md:w-11/12 w-full flex-col m-auto my-4 mt-[1%] text-sm lg:text-base'>
-      <p className='text-2xl font-extrabold lg:ml-0 ml-4'>Contact Now</p><hr className='my-4' />
+      <div id='contact' className='lg:w-8/12 md:w-11/12 w-full flex-col m-auto my-4 mt-[1%] text-sm lg:text-base'>
+      <p className='text-2xl font-extrabold lg:ml-0 ml-4'>Contact Now 📞</p><hr className='my-4' />
 
         <div className='w-full h-[300px] flex m-auto my-4 '>
           <iframe  className='w-full h-full rounded-md outline-none' frameBorder="0" src="https://www.google.com/maps/embed/v1/place?q=Mangaon&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
@@ -18,7 +18,9 @@ const Contact = () => {
               <img
                 className='w-10 h-10 m-4 bg-white rounded-full'
                 src="https://cdn.iconscout.com/icon/premium/png-512-thumb/address-1522724-1289410.png?f=webp&w=256" alt="" />
-              <p>Address : <br />Place : Mangaon, Dist.: Raigad, State : Maharashtra, India,<br />
+              <p>
+                <p className=' font-bold'>Address :</p>
+                Place : Mangaon, Dist.: Raigad, State : Maharashtra, India,<br />
                 Pin : 402112 </p>
             </div>
 
@@ -26,16 +28,16 @@ const Contact = () => {
               <img
                 className='w-10 h-10 m-4 bg-white rounded-full'
                 src="https://cdn.iconscout.com/icon/free/png-512/free-phone-2015-1100768.png?f=webp&w=256" alt="" />
-              <p>Phone : <br />
-              +91 77688824 </p>
+             <p className=' font-bold'>Contact :</p>
+             <p> +91 77688824 </p>
             </div>
 
             <div className='flex justify-start  items-center m-4'>
               <img
                 className='w-10 h-10 m-4 bg-white rounded-full'
                 src="https://cdn.iconscout.com/icon/premium/png-512-thumb/address-54-103144.png?f=webp&w=256" alt="" />
-              <p>Email : <br />
-              dalvishrikant@gmail.com </p>
+              <p><p className=' font-bold'>Email :</p>
+              dalvishrikant5456@gmail.com </p>
             </div>
 
           </div>

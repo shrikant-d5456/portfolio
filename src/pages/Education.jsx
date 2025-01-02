@@ -5,7 +5,7 @@ const education = () => {
   return (
     <>
       <div className='lg:w-8/12 w-11/12 flex-col m-auto my-8 mt-[5%] text-sm lg:text-base'>
-        <p className='text-2xl font-extrabold  '>Education</p><hr className='my-4' />
+        <p className='text-2xl font-extrabold  '>Education 🏫</p><hr className='my-4' />
 
         {
           education_data.map((element, index) => (

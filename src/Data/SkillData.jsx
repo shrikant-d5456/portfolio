@@ -1,42 +1,18 @@
 const skill_data = [
     {
-        id:10,
-        img: "https://w7.pngwing.com/pngs/441/460/png-transparent-postgresql-plain-wordmark-logo-icon.png",
-        skill_name: "PostgreSQL",
-        range: 80,
-        desc : "A powerful open-source relational database system known for its advanced features, extensibility, and support for SQL compliance and complex queries.",
-        
-    },
-    {
-        id:9,
-        img: "https://th.bing.com/th/id/R.9c2c379aef549a2cf9266bcc409ecf03?rik=Vo%2f7VWyCHM60Ew&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fmongodb-png--1000.png&ehk=kjjn5rqJgQ8SBkkmFm9UTRWhxyIhJD3%2bp%2fFhPF0WgHA%3d&risl=&pid=ImgRaw&r=0",
-        skill_name: "MongoDB",
-        range: 80,
-        desc : "A NoSQL database known for its flexibility and scalability, using a document-oriented data model to store and manage large datasets.",
-        
-    },
-    {
-        id:8,
-        img: "https://aglowiditsolutions.com/wp-content/uploads/2018/12/ExpressJS.png",
-        skill_name: "Express",
-        range: 80,
-        desc : " A minimal and flexible Node.js web application framework, providing robust features for building single-page, multi-page, and hybrid web applications.",
-        
-    },
-    {
         id:7,
-        img: "https://e7.pngegg.com/pngimages/306/37/png-clipart-node-js-logo-node-js-javascript-web-application-express-js-computer-software-others-miscellaneous-text.png",
-        skill_name: "NodeJs",
+        img: "https://media.zeemly.com/zeemly/product/tailwind-css.png",
+        skill_name: "Tailwind CSS",
         range: 80,
-        desc : "A runtime environment for executing JavaScript on the server-side, enabling the development of scalable and high-performance web applications.",
-        
+        certificate:"https://www.udemy.com/certificate/UC-d02b636d-2932-424c-b8c4-a31a60847ce8/",
     },
     {
         id:6,
-        img: "https://cdn.dribbble.com/users/3865/screenshots/14403810/media/50de49976e47e90626e7aac690176553.png?resize=640x480&vertical=center",
+        img: "https://th.bing.com/th/id/OIP.z-P8FR0gYLOg6wgkrZTwAQHaHa?rs=1&pid=ImgDetMain",
         skill_name: "Figma",
         range: 83,
-        desc : "A collaborative design tool for creating user interfaces, wireframes, and prototypes, enabling real-time collaboration and feedback among designers.",
+        desc : "",
+        certificate:"https://www.udemy.com/certificate/UC-3947ccbc-ec48-498b-a502-f9e033de0b5d/",
         
     },
     {
@@ -44,37 +20,38 @@ const skill_data = [
         img: "https://cdn3.iconfinder.com/data/icons/social-media-circle/512/circle-github-512.png",
         skill_name: "Git and GitHub",
         range: 80,
-        desc : "A distributed version control system that allows developers to track changes, collaborate, and manage code history effectively in software projects.",
-        
+        certificate:"https://www.udemy.com/certificate/UC-121c4f8c-3e3c-4c43-bfb0-4bc8e28f7db1/",
+         
     },
     {
         id:4,
-        img: "https://icon-library.com/images/react-icon/react-icon-0.jpg",
+        img: "https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png",
         skill_name: "ReactJs",
         range: 88,
-        desc : "A powerful JavaScript library for building user interfaces, known for its component-based architecture and efficient rendering using a virtual DOM.",
-        
+        certificate:"https://media.geeksforgeeks.org/courses/certificates/5ae0145560cb866752cd46a529b07a78.pdf",
+           
     },
+
     {
         id:3,
-        img: "https://img.favpng.com/2/12/22/javascript-icon-png-favpng-ruDBDhxzVxWHgXXtH2Hi1XzJf.jpg",
+        img: "https://static.vecteezy.com/system/resources/previews/027/127/560/original/javascript-logo-javascript-icon-transparent-free-png.png",
         skill_name: "Java Script",
         range: 82,
-        desc : "A versatile programming language used for creating dynamic and interactive web applications, essential for frontend and backend development.",   
+        certificate:"https://trainings.internshala.com/s/v/2831156/46a2f5a5",
     },
     {
         id:2,
-        img: "https://static-00.iconduck.com/assets.00/file-type-css-icon-1806x2048-r5fwjl3p.png",
+        img: "https://cdn3.iconfinder.com/data/icons/social-media-logos-flat-colorful-1/2048/5351_-_CSS3-512.png",
         skill_name: "CSS",
         range: 85,
-        desc : "I learned CSS to design responsive, visually appealing web interfaces, enhancing user experience with layout, styling, and animations.",    
+        certificate:"https://www.udemy.com/certificate/UC-7f563d2d-5262-40ac-81e8-ae9e18eb191c/",
     },
     {
         id:1,
         img: "https://cdn.iconscout.com/icon/free/png-512/html5-10-569380.png",
         skill_name: "HTML",
         range: 85,
-        desc : "I have a strong grasp of HTML, enabling me to create structured, accessible, and visually appealing web pages efficiently.",   
+        certificate:"https://www.udemy.com/certificate/UC-7f563d2d-5262-40ac-81e8-ae9e18eb191c/",
     },
 ]
 

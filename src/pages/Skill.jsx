@@ -3,6 +3,8 @@ import skillData from '../Data/SkillData'
 
 import ReactSpeedometer from "react-d3-speedometer/slim"
 import { Bounce, Fade, Flip, Hinge, JackInTheBox, Roll, Rotate, Slide, Zoom } from 'react-awesome-reveal';
+import BgBlur from './BgBlur';
+import { BsArrowBarRight } from 'react-icons/bs';
 
 
 const Skill = () => {
@@ -23,35 +25,43 @@ const Skill = () => {
 
   return (
     <>
-      <div className='lg:w-8/12 w-11/12 flex-col m-auto my-4 mt-[10%] text-sm lg:text-base'>
+      <div id='skill' className='lg:w-8/12 w-11/12 flex-col m-auto my-4 mt-[10%] text-sm lg:text-base'>
+      <BgBlur />
+      <p className='text-2xl font-extrabold w-full'>Technical Skill's 🧑🏻‍💻</p>
+      <hr className='my-4' />
+      <div className="bg-gradient-to-r from-[#3dc2da] via-[#0387a4] to-[#31aac5] p-8 rounded-lg text-white my-4">
+                <h1 className="text-3xl font-bold mb-4">Continue learning</h1>
+                <p className="text-lg">"Every line of code is a step toward turning ideas into reality. 🌟👨‍💻
+                Embrace the journey of innovation and problem-solving—your potential is limitless!"🚀
+                </p>
+            </div>
         <div className='flex justify-between items-center'>
-          <p className='text-2xl font-extrabold w-full'>Technical Skill's</p>
-
-          <div className=' w-[100px] flex justify-end items-center'>
+          <div className=' w-full flex justify-end items-center '>
             <button
               onClick={() => setScolling(!scrolling)}
-              className='p-1 text-blue-400 hover:text-blue-500'
+              className='float-right p-1 text-blue-400 hover:text-blue-500 my-4'
             > {scrolling == true ? " ∫ open" : " ∬ close"}
             </button>
           </div>
         </div>
-        <hr className='my-4' />
+        
 
 
         {scrolling == true ?
-          <marquee className='w-full flex gap-4 ' scrollamount="5" direction="right">
-            <div className='w-full flex gap-8  '>
+        
+            <div className='w-full overflow-x-scroll flex gap-8  '>
               {
                 skillData.map((img, index) => (
-                  <i key={index} className=' lg:w-[100px] lg:h-[100px] w-[60px] h-[60px] rounded-full hover:shadow-4xl  '><img
-                    className='lg:w-[100px] lg:h-[100px] w-[60px] h-[60px] rounded-full border-2 lg:border-[4px]   border-[#a8efff] lg:p-2 p-1'
-                    src={img.img} alt="" title={img.skill_name} />
-                  </i>
+                                     <img
+                    className='lg:w-[100px] lg:h-[100px] w-[60px] h-[60px] rounded-full border-2 lg:border-[4px] object-cover   border-[#a8efff] lg:p-2 p-1'
+                    src={img.img} alt="" title={img.skill_name} 
+                    />
+                
                 ))
 
               }
             </div>
-          </marquee>
+        
           :
           <>
             {
@@ -98,6 +108,9 @@ const Skill = () => {
 
                         <p className='text-justify '>{element.desc}
                         </p>
+                        <a href={element.certificate} target='_blank'>
+                          <button className=' bg-cyan-500  hover:bg-cyan-600 py-1 px-4 my-2 transition-all text-sm text-white rounded-full flex justify-center items-center gap-2'>See Certificate <BsArrowBarRight className=' text-sm font-extrabold' /></button>
+                        </a>
                         <div className='dot dark:shadow relative z-10 top-2'></div>
                       </div>
                     </div>

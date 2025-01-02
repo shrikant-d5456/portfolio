@@ -1,0 +1,23 @@
+import React from 'react'
+import { Bounce, Fade, Flip, Hinge, JackInTheBox, Roll, Rotate, Slide, Zoom } from 'react-awesome-reveal';
+
+
+const Header = () => {
+  return (
+    
+    <div className=' fixed w-full bottom-1 flex justify-center items-center m-auto z-40  '>
+      <Bounce>
+      <ul className=' w-fit bg-[#111d2d7f] backdrop-blur-md text-white flex justify-between items-center gap-8 text-sm px-8 py-4 rounded-full font-semibold '>
+        <li ><a href="#about">About</a></li>
+        <li><a href="#experience" >Experience</a></li>
+        <li><a href="#skill">Skill</a></li>
+        <li><a href="#project">Project</a></li>
+        <li><a href="#contact" >Contact</a></li>
+      </ul>
+      </Bounce>
+    </div>
+    
+  )
+}
+
+export default Header

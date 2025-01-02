@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import projectData from '../Data/ProjectData';
 import { BsGithub, BsLink45Deg } from 'react-icons/bs'
 import { Bounce, Fade, Flip, Hinge, JackInTheBox, Roll, Rotate, Slide, Zoom } from 'react-awesome-reveal';
+import BgBlur from './BgBlur';
 
 
 const Card = ({ color, children }) => {
@@ -46,11 +47,11 @@ const Card = ({ color, children }) => {
 
         {
           children.webLink &&
-            <a href={children.webLink} target="_blank" rel="noopener noreferrer">
-              <div className='absolute top-2 right-2 z-10 rounded-full text-md font-semibold w-fit bg-black/80 p-2' title='click me'>
-                <BsLink45Deg className='text-xl text-white ' />
-              </div>
-            </a>   
+          <a href={children.webLink} target="_blank" rel="noopener noreferrer">
+            <div className='absolute top-2 right-2 z-10 rounded-full text-md font-semibold w-fit bg-black/80 p-2' title='click me'>
+              <BsLink45Deg className='text-xl text-white ' />
+            </div>
+          </a>
         }
 
         <div className='absolute top-[64%] text-white  bg-black/40 text-md font-semibold p-2'>
@@ -64,18 +65,23 @@ const Card = ({ color, children }) => {
 const Project = () => {
   return (
 
-    <div className='lg:w-8/12 w-11/12 flex-col m-auto my-4 mt-[10%] text-sm lg:text-base'>
-
-      <p className='text-2xl font-extrabold'>Project's</p>
+    <div id='project' className='lg:w-8/12 w-11/12 flex-col m-auto my-4 mt-[10%] text-sm lg:text-base'>
+<BgBlur/>
+      <p className='text-2xl font-extrabold'>Project Room💡</p>
       <hr className='my-4' />
-      <div className='flex justify-center items-center'>
+      <div className="bg-gradient-to-r from-[#3dc2da] via-[#0387a4] to-[#31aac5] p-8 rounded-lg text-white my-4">
+        <h1 className="text-3xl font-bold mb-4">Skill Unleashed! 🚀</h1>
+        <p className="text-lg">"Every project begins with a spark of imagination and grows into something extraordinary. ✨🚀
+          Dive into the world of creativity and innovation—where possibilities are endless, and ideas come to life!"</p>
+      </div>
+      <div className='flex justify-between items-center'>
         <div className="container ">
           {projectData.map((element, index) => (
-            <Fade direction='left' triggerOnce>
-              <Card key={index} color="#00c8ff">
+            <Fade key={index} direction='left' triggerOnce>
+              <Card  color="#00c8ff">
                 {{
                   gitLink: element.gitLink,
-                  webLink:element.webLink,
+                  webLink: element.webLink,
                   projectName: element.projectName,
                   img: element.img
                 }}

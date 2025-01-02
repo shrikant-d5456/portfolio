@@ -8,6 +8,7 @@ import Contact from './pages/Contact'
 import Navbar from './pages/Navbar'
 import BgAnime from './pages/BgAnime'
 import Compliment from './pages/Compliment'
+import Header from './pages/Header'
 
 const App = () => {
   return (
@@ -19,17 +20,13 @@ const App = () => {
     <HeroSection/>
     <Work/>
     <Skill/>
-<<<<<<< HEAD
-    {/* <Education/> */}
-=======
       {/* <Education/> */}
->>>>>>> 2cc492a021134d07cecf275f78d2c9bb5562491b
     <Project/>
     <Compliment/>
     <Contact/>
-    <div className='w-full h-full'>
+    {/* <div className='w-full h-full'>
       <img className='w-full h-full' src="https://accounts.pwskills.com/images/signin-banner.svg" alt="" />
-    </div>
+    </div> */}
     </main>
     </>
   )

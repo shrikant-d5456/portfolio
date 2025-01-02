@@ -3,6 +3,8 @@ import DarkMode from './DarkMode'
 import {Bounce, Fade, Flip, Hinge, JackInTheBox, Roll, Rotate, Slide, Zoom } from 'react-awesome-reveal';
 import Shade from './Shade';
 import pdf from '../Data/resume.pdf';
+import img from '../assets/shreeImg.jpg';
+
 
 const Home = () => {
 
@@ -11,24 +13,24 @@ const Home = () => {
     
    <Shade/>
     
-    <div className='w-full flex-col justify-center items-center mt-[60px] overflow-hidden '>
+    <div id='about' className='w-full flex-col justify-center items-center mt-[60px] overflow-hidden '>
       <DarkMode/>
       <div className='w-11/12 lg:flex md:flex flex-row justify-center items-center m-auto mb-5'>
       
       <JackInTheBox triggerOnce>
-        <div className='anime lg:w-[300px] h-[300px] w-[300px] md:m-0 m-auto rounded-full  p-4 dark:bg-[#ffffff45] border-[#a8efff] '
+        <div className='anime lg:w-[300px] h-[300px] w-[300px] md:m-0 m-auto rounded-full  p-4  border-[#a8efff] '
         >
           <img
-            className='h-full w-full object-cover rounded-full'
-            src="https://2.bp.blogspot.com/-7VyC-X2pSrE/Vo0iGe_NX6I/AAAAAAAABGs/r8zGLJ1Anx4/s1600/CYAuUF_UoAATCw0.jpg" alt="" />
+            className='h-full w-full object-cover rounded-full mix-blend-color-burn dark:mix-blend-darken'
+            src={img} alt="" />
         </div>
         </JackInTheBox>
 
         <div className='lg:w-1/3 md:w-2/3 w-full h-1/2 p-4 font-semibold'
         >
           <Slide direction='up' triggerOnce>
-          <p className='text-3xl font-bold mt-4'>Hey, I'm Shrikant Dalvi</p>
-          <p className='text-xl my-2'>Passionated to <span className='font-extrabold  text-[#2cd6fc]'>Frontend Developer</span> and <span className='font-extrabold  text-[#2cd6fc]'>Ui Designer</span></p>
+          <p className='text-3xl font-bold mt-4 tracking-wider'>Hey, I'm Shrikant Dalvi</p>
+          <p className='text-xl my-2'>Passionated about <span className='font-extrabold  text-[#2cd6fc]'>Frontend Developer</span> and <span className='font-extrabold  text-[#2cd6fc]'>Ui Designer</span></p>
           </Slide >
           <div>
             <hr />
@@ -37,9 +39,9 @@ const Home = () => {
 
 
           <Slide direction='up' triggerOnce>
-          <div className='flex items-center'
+          <div className='flex items-center '
           ><img
-            className='w-5 h-5 mr-2 bg-white rounded-full'
+            className='flex w-5 h-5 mr-2 bg-white myImg rounded-full '
             src="https://cdn.iconscout.com/icon/free/png-512/free-location-2456681-2036135.png?f=webp&w=256" alt="" 
             />
             <p className='text-md  my-2'>Mangaon, Raigad</p>
@@ -50,7 +52,9 @@ const Home = () => {
             <div className='  flex justify-between my-4'>
 
             <Bounce damping={0.1} triggerOnce>
-            <a href="/email" target="_blank" rel="noopener noreferrer">
+            <a 
+            href="mailto:dalvishrikant5456@gmail.com "
+            target="_blank" rel="noopener noreferrer">
               <div className=' hover:text-cyan-500 flex justify-center items-center gap-4'>
                <img
                   className='w-10 h-10'
@@ -61,7 +65,7 @@ const Home = () => {
             </Bounce>
 
             <Bounce damping={0.5} triggerOnce>
-            <a href="/link" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/shrikant-dalvi-025ba4318?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">
               <div className=' hover:text-cyan-500 flex justify-center items-center gap-4'>
                 <img
                   className='w-10 h-10'
@@ -106,13 +110,8 @@ const Home = () => {
 {/* //About Section */}
 
 <Fade >
-<<<<<<< HEAD
-      <div className='w-full flex justify-center items-center  '>
-        <div className='box lg:w-2/3 text-center p-4 backdrop-blur  '>
-=======
       <div className='w-full flex justify-center items-center'>
         <div className='box lg:w-2/3 text-center p-4 backdrop-blur shadow-lg '>
->>>>>>> 2cc492a021134d07cecf275f78d2c9bb5562491b
           <p className='text-2xl font-extrabold'>
           About Me 
           </p>

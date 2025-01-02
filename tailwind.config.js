@@ -9,7 +9,7 @@ export default {
     extend: {
       backgroundImage: {
         'light-gradient': 'radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%)',
-        'dark-gradient': 'linear-gradient(to right,rgb(255 255 255),rgb(222 214 254)); ',
+        'dark-gradient': 'linear-gradient(to right,rgb(255 255 255),rgb(255 255 255)); ',
       },
       colors: {
         'light-text': 'rgb(255, 255, 255)',

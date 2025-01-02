@@ -47,18 +47,14 @@ const Navbar = () => {
         <div className=' w-full flex justify-between items-center gap-4 text-white dark:text-black '>
           <div className='flex justify-center items-center gap-4'>
           <span className="circle pulse blue"></span>
-          Awailable to Work
+          Awailable to Work 🛄
           </div>
           
          
             {showDiv && (
               <div>
                 <Bounce>
-<<<<<<< HEAD
-                <button onClick={scrollToBottom} type='submit' className='anime bg-cyan-500 hover:bg-cyan-600   px-4 py-1  transition-all text-sm text-white'>Hire Me</button>
-=======
-                <button onClick={scrollToBottom} type='submit' className='ml-2 py-[2px] px-4 dark:bg-[#e14eff] bg-[#00d0ff] font-semibold text-white'>Hire Me</button>
->>>>>>> 2cc492a021134d07cecf275f78d2c9bb5562491b
+                <button onClick={scrollToBottom} type='submit' className=' bg-cyan-500 hover:bg-cyan-600 font-semibold   py-1 px-4  transition-all text-sm text-white'>Hire Me</button>
                 </Bounce>
               </div>
             )}
