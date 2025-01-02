@@ -2,6 +2,7 @@ const work_data = [
     {
         id:2,
         img: "",
+<<<<<<< HEAD
         company_name: "Farmer Empowerment Project",
         role:"Frontend Developer and Figma Designer",
         start:"1 Feb 2024",
@@ -9,6 +10,13 @@ const work_data = [
         desc: "As a frontend developer and Figma designer for the Farmer Empowering Management System, I contributed to creating an intuitive and user-friendly platform designed to provide tools and resources for farmers. My responsibilities included designing sleek and functional user interfaces in Figma, ensuring they aligned with the project's goal of enhancing productivity and informed decision-making for users.",  
         documentLink:"",
     
+=======
+        company_name: "FEMS Project @Dabtu",
+        role:"Frontend Developer Intern",
+        start:"1/5/2024",
+        end:"Present",
+        desc : "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos iste accusamus alias cum nemo facilis sapiente excepturi cupiditate, debitis doloribus.",  
+>>>>>>> e6be1294b103e4984ccc220cbfcf601d11f2fbd0
     },
     {
         id:1,
