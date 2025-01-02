@@ -21,13 +21,11 @@ const Home = () => {
         <div className='anime lg:w-[300px] h-[300px] w-[300px] md:m-0 m-auto rounded-full  p-4  border-[#a8efff] '
         >
           <img
-<<<<<<< HEAD
             className='h-full w-full object-cover rounded-full mix-blend-color-burn dark:mix-blend-darken'
             src={img} alt="" />
-=======
+
             className='h-full w-full object-cover rounded-full'
             src="https://2.bp.blogspot.com/-7VyC-X2pSrE/Vo0iGe_NX6I/AAAAAAAABGs/r8zGLJ1Anx4/s1600/CYAuUF_UoAATCw0.jpg" alt="Image Loaing.." />
->>>>>>> e6be1294b103e4984ccc220cbfcf601d11f2fbd0
         </div>
         
         </JackInTheBox>
@@ -58,13 +56,13 @@ const Home = () => {
             <div className='  flex justify-between my-4'>
 
             <Bounce damping={0.1} triggerOnce>
-<<<<<<< HEAD
+
             <a 
             href="mailto:dalvishrikant5456@gmail.com "
             target="_blank" rel="noopener noreferrer">
-=======
+
             <a href="mailto:dalvishrikant5456@gmail.com" target="_blank" rel="noopener noreferrer">
->>>>>>> e6be1294b103e4984ccc220cbfcf601d11f2fbd0
+
               <div className=' hover:text-cyan-500 flex justify-center items-center gap-4'>
                <img
                   className='w-10 h-10'
@@ -75,11 +73,11 @@ const Home = () => {
             </Bounce>
 
             <Bounce damping={0.5} triggerOnce>
-<<<<<<< HEAD
+
             <a href="https://www.linkedin.com/in/shrikant-dalvi-025ba4318?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">
-=======
+
             <a href="https://www.linkedin.com/in/shrikant-dalvi-025ba4318/" target="_blank" rel="noopener noreferrer">
->>>>>>> e6be1294b103e4984ccc220cbfcf601d11f2fbd0
+
               <div className=' hover:text-cyan-500 flex justify-center items-center gap-4'>
                 <img
                   className='w-10 h-10'
