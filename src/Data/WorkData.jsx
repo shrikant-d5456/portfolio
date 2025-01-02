@@ -21,4 +21,4 @@ const work_data = [
     },    
 ]
 
-export default work_data;
+export default work_data; 
