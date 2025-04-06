@@ -53,6 +53,7 @@ const Skill = () => {
               {
                 skillData.map((img, index) => (
                                      <img
+                                     key={index}
                     className='lg:w-[100px] lg:h-[100px] w-[60px] h-[60px] rounded-full border-2 lg:border-[4px] object-cover   border-[#a8efff] lg:p-2 p-1'
                     src={img.img} alt="" title={img.skill_name} 
                     />

@@ -19,9 +19,10 @@ const Contact = () => {
                 className='w-10 h-10 m-4 bg-white rounded-full'
                 src="https://cdn.iconscout.com/icon/premium/png-512-thumb/address-1522724-1289410.png?f=webp&w=256" alt="" />
               <p>
-                <p className=' font-bold'>Address :</p>
+                <span className=' font-bold'>Address :</span>
                 Place : Mangaon, Dist.: Raigad, State : Maharashtra, India,<br />
-                Pin : 402112 </p>
+                Pin : 402112 
+              </p>
             </div>
 
             <div className='flex justify-start  items-center m-4'>
@@ -36,7 +37,8 @@ const Contact = () => {
               <img
                 className='w-10 h-10 m-4 bg-white rounded-full'
                 src="https://cdn.iconscout.com/icon/premium/png-512-thumb/address-54-103144.png?f=webp&w=256" alt="" />
-              <p><p className=' font-bold'>Email :</p>
+              <p>
+                <span className=' font-bold'>Email :</span>
               dalvishrikant5456@gmail.com </p>
             </div>
 
@@ -61,5 +63,4 @@ const Contact = () => {
     </>
   )
 }
-
 export default Contact
