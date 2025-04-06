@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import work_data from '../Data/WorkData'
-
 import { Bounce, Fade, Flip, Hinge, JackInTheBox, Roll, Rotate, Slide, Zoom } from 'react-awesome-reveal';
 import BgBlur from './BgBlur';
 import { BsArrowBarRight } from 'react-icons/bs';
@@ -56,10 +55,10 @@ const Work = () => {
 
                 <div className='lg:w-[50px] lg:h-[50px]  w-[50px] h-[50px] border-4 p-1  border-[#8beaff] rounded-full'
                 >
-                  <a href={element?.weblink} target='self' title='Go to Website'>
+                  <a href={element?.webLink} target='self' title='Go to Website'>
                     <img
                       className='w-full h-full object-cover rounded-full text-sm '
-                      src={element.img} alt="loading.." />
+                      src={element?.img}  alt='loading' />
                   </a>
                 </div>
 
@@ -95,13 +94,8 @@ const Work = () => {
             </button>
           </div>
         }
-
-
       </div>
     </>
   )
 }
-
-
-
 export default Work
