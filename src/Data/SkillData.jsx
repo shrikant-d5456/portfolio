@@ -1,4 +1,27 @@
 const skill_data = [
+     {
+        id:10,
+        img: "https://miro.medium.com/v2/resize:fit:1000/0*8v1xNP18Ovj3wg6K.gif",
+        skill_name: "MongoDb",
+        range: 90,
+        desc : "",
+        certificate:"",
+    },
+    {
+        id:9,
+        img: "https://th.bing.com/th/id/OIP.z-P8FR0gYLOg6wgkrZTwAQHaHa?rs=1&pid=ImgDetMain",
+        skill_name: "Express",
+        range: 88,
+        desc : "",
+        certificate:"",
+    },
+    {
+        id:8,
+        img: "https://www.mindrops.com/images/nodejs-image.webp",
+        skill_name: "Node.Js",
+        range: 85,
+        certificate:"",
+    },
     {
         id:7,
         img: "https://media.zeemly.com/zeemly/product/tailwind-css.png",
