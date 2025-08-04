@@ -1,21 +1,21 @@
-/** @type {import('tailwindcss').Config} */
-export default {
-  darkMode: 'class',
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+// tailwind.config.js
+module.exports = {
+  
+  darkMode: 'class', // IMPORTANT!
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
-      backgroundImage: {
-        'light-gradient': 'radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%)',
-        'dark-gradient': 'linear-gradient(to right,rgb(255 255 255),rgb(255 255 255)); ',
-      },
       colors: {
-        'light-text': 'rgb(255, 255, 255)',
-        'dark-text': 'rgb(1, 1, 1)',
-      }
+       primary:'black', primaryLight:'#e3f1f5',
+        accent: '#14b8a6',        // Teal-500
+        success: '#22c55e',       // Green-500
+        dark: '#090d13',          // Custom dark
+      },
     },
   },
   plugins: [],
-}
+
+};
+//blue primary:'#008bdd', primaryLight:'#e3f1f5',
+//green primary: '#02cd00',  primaryLight: '#e2ffe1',
+//black primary: '#000',  primaryLight: '#e2ffe1',

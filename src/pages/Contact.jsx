@@ -1,66 +1,61 @@
 import React from 'react'
+import { BsMailbox2, BsMap, BsMapFill, BsPhoneFill } from 'react-icons/bs'
 
 const Contact = () => {
   return (
-    <>
-      <div id='contact' className='lg:w-8/12 md:w-11/12 w-full flex-col m-auto my-4 mt-[1%] text-sm lg:text-base'>
-      <p className='text-2xl font-extrabold lg:ml-0 ml-4'>Contact Now 📞</p><hr className='my-4' />
+    <div className=' dark:bg-black dark:text-white'>
+      <div id='contact' className='lg:w-8/12 md:w-11/12 w-full flex-col m-auto  text-sm lg:text-base  py-8'>
+        <p className='text-2xl font-extrabold lg:ml-0 ml-4'>Contact Now</p><hr className='my-4' />
 
         <div className='w-full h-[300px] flex m-auto my-4 '>
-          <iframe  className='w-full h-full rounded-md outline-none' frameBorder="0" src="https://www.google.com/maps/embed/v1/place?q=Mangaon&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
+          <iframe className='w-full h-full rounded-md outline-none' frameBorder="0" src="https://www.google.com/maps/embed/v1/place?q=Mangaon&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
         </div>
 
         <div className=' w-full lg:flex m-auto'>
 
           <div className='lg:w-1/2 flex-col justify-center items-center '>
 
-            <div className='flex justify-start items-center m-4'>
-              <img
-                className='w-10 h-10 m-4 bg-white rounded-full'
-                src="https://cdn.iconscout.com/icon/premium/png-512-thumb/address-1522724-1289410.png?f=webp&w=256" alt="" />
+            <div className='flex justify-startitems-center  gap-4 m-4'>
+              <BsMapFill />
               <p>
-                <span className=' font-bold'>Address :</span>
-                Place : Mangaon, Dist.: Raigad, State : Maharashtra, India,<br />
-                Pin : 402112 
+                <span className=' font-bold'>Address: </span>
+                Place: Mangaon, Dist: Raigad, State: Maharashtra, India,<br />
+                Pin: 402112
               </p>
             </div>
 
-            <div className='flex justify-start  items-center m-4'>
-              <img
-                className='w-10 h-10 m-4 bg-white rounded-full'
-                src="https://cdn.iconscout.com/icon/free/png-512/free-phone-2015-1100768.png?f=webp&w=256" alt="" />
-             <p className=' font-bold'>Contact :</p>
-             <p> +91 77688824 </p>
+            <div className='flex justify-start items-center gap-4  m-4'>
+              <BsPhoneFill />
+              <p className=' font-bold'>Contact: </p>
+              <p>+91 7768882495 </p>
             </div>
 
-            <div className='flex justify-start  items-center m-4'>
-              <img
-                className='w-10 h-10 m-4 bg-white rounded-full'
-                src="https://cdn.iconscout.com/icon/premium/png-512-thumb/address-54-103144.png?f=webp&w=256" alt="" />
+            <div className='flex justify-start items-center gap-4  m-4'>
+              <BsMailbox2 />
               <p>
-                <span className=' font-bold'>Email :</span>
-              dalvishrikant5456@gmail.com </p>
+                <span className=' font-bold'>Email: </span>
+                dalvishrikant5456@gmail.com </p>
             </div>
 
           </div>
 
-          <div className= 'lg:w-1/2 p-4 '>
-          <p className='text-xl font-semibold m-2'>Send  Message </p><hr className='my-4 ml-2 border-white'/>
+          <div className='lg:w-1/2 p-4 '>
+            <p className='text-xl font-semibold m-2'>Send  Message </p><hr className='my-4 ml-2 border-white' />
 
-          <form  action="https://formspree.io/f/mjkbygqk" method="POST" className='dark:text-black text-white'>
-          <input className='inp  ' placeholder='Name' type="text" name='Name' required/>
+            <form action="https://formspree.io/f/mjkbygqk" method="POST" className='dark:text-black text-white'>
+              <input className='inp border dark:border-white border-black ' placeholder='Name' type="text" name='Name' required />
 
-          <input className='inp  ' placeholder='Email' type="email" name="email" required/>
+              <input className='inp border dark:border-white border-black ' placeholder='Email' type="email" name="email" required />
 
-          <textarea className='inp ' cols={4} rows={4} placeholder='Message' name="message" type="text" required/>
-          <button type='submit' className=' ml-2 anime bg-cyan-500 hover:bg-cyan-600 font-semibold px-4 py-1  transition-all text-sm text-white'>Hire Me</button>
-          </form>
+              <textarea className='inp border dark:border-white border-black' cols={4} rows={4} placeholder='Message' name="message" type="text" required />
+              <button type='submit' className='box  ml-2 anime bg-primary hover:bg-primary font-semibold px-4 py-1  transition-all text-sm text-white'>Hire Me</button>
+            </form>
           </div>
 
         </div>
 
       </div>
-    </>
+    </div>
   )
 }
 export default Contact

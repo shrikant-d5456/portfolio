@@ -17,6 +17,7 @@ const App = () => {
       <main className='bg-light-gradient dark:bg-dark-gradient text-light-text dark:text-dark-text'>
 
 
+        <Header/>
         <Suspense fallback={<div className=' animate-ping w-full h-screen flex justify-center items-center'>Loading..</div>} >
           <BgAnime />
           <Navbar />

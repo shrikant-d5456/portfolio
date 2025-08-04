@@ -7,7 +7,7 @@ const Header = () => {
     
     <div className=' fixed w-full bottom-1 flex justify-center items-center m-auto z-40  '>
       <Bounce>
-      <ul className=' w-fit bg-[#111d2d7f] backdrop-blur-md text-white flex justify-between items-center gap-8 text-sm px-8 py-4 rounded-full font-semibold '>
+      <ul className=' w-fit bg-[#3b3b3b7f] backdrop-blur-md text-white flex justify-between items-center gap-8 lg:text-sm px-8 py-4 rounded-full font-semibold text-xs '>
         <li ><a href="#about">About</a></li>
         <li><a href="#experience" >Experience</a></li>
         <li><a href="#skill">Skill</a></li>

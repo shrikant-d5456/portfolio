@@ -5,26 +5,25 @@ import {Bounce, Fade, Flip, Hinge, JackInTheBox, Roll, Rotate, Slide, Zoom } fro
 
 
 const DarkMode = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
 
+  // ✅ Get initial theme from localStorage
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem('theme') === 'dark';
+  });
+
+  // ✅ Apply theme on page load and whenever theme changes
   useEffect(() => {
-    if (localStorage.getItem('theme') === 'dark') {
+    if (theme) {
       document.documentElement.classList.add('dark');
-      setIsDarkMode(true);
     } else {
       document.documentElement.classList.remove('dark');
     }
-  }, []);
+  }, [theme]);
 
-  const toggleDarkMode = () => {
-    document.documentElement.classList.toggle('dark');
-    const newIsDarkMode = !isDarkMode;
-    setIsDarkMode(newIsDarkMode);
-    if (newIsDarkMode) {
-      localStorage.setItem('theme', 'dark');
-    } else {
-      localStorage.removeItem('theme');
-    }
+   const toggleTheme = () => {
+    const newTheme = !theme;
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme ? 'dark' : 'light');
   };
 
   return (
@@ -32,11 +31,11 @@ const DarkMode = () => {
     <Fade>
     <img
       className=" w-[95px] h-[95px] cursor-pointer"
-      src={isDarkMode ? lightIcon : darkIcon}
+      src={theme ? lightIcon : darkIcon}
       alt="Toggle Dark Mode"
-      onClick={toggleDarkMode}
+      onClick={toggleTheme}
 
-      title={isDarkMode ? 'Switch to Night' : 'Switch to Morning'}
+      title={theme ? 'Switch to Night' : 'Switch to Morning'}
     />
     </Fade>
     </div>

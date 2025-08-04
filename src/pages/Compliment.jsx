@@ -52,23 +52,23 @@ const Compliment = () => {
     // }
 
     return (
-        <div className='lg:w-8/12 md:w-11/12 w-full lg:h-screen flex-col m-auto my-4 mt-[10%] text-sm lg:text-base p-4'>
+        <div className='dark:bg-black dark:text-white py-8'>
+            <div className='lg:w-8/12 md:w-11/12 w-full lg:h-screen overflow-hidden flex-col m-auto my-4 mt-[10%] text-sm lg:text-base p-4'>
             
-            <BgBlur/>
-            <p className='text-2xl font-extrabold md:ml-0 ml-4'>
-                Compliment Section 😇
-            </p>
-            <div className="bg-gradient-to-r from-[#3dc2da] via-[#0387a4] to-[#31aac5] p-8 rounded-lg text-white my-4">
+            {/* <BgBlur/> */}
+           
+           <p className='text-2xl font-extrabold  '>Testimonials  </p><hr className=' mt-4 ' />
+        <div className='dot dark:shadow w-fit relative bottom-[11px]'></div>
+            <div className="dark:from-white/50 dark:via-white/50 dark:to-white/50 bg-gradient-to-r from-primary/50 via-primary/90 to-primary p-8 rounded-lg text-white my-4">
             <h1 className="text-3xl font-bold mb-4">Good Impression</h1>
                 <p className="text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est eius vitae neque eaque explicabo consequuntur nam, incidunt veniam quaerat delectus!</p>
             </div>
-            <hr className='my-4' />
 
-                <div className='w-full flex gap-8  overflow-x-scroll h-[260px] '>
+                <div className=' animate-marquee  w-10/12 m-auto  flex gap-8   '>
 
                     {Compliments.map((ele) => (
                         <JackInTheBox key={ele.id} >
-                            <div  className='anime w-[400px] mx-4 bg-gradient-to-br from-cyan-100 via-transparent to-cyan-100 shadow-2xl dark:border-[1px]  rounded-br-3xl rounded-t-3xl  border-white px-6 py-4'>
+                            <div  className=' w-[400px] mx-4 shadow-md dark:border-[1px]  rounded-br-3xl rounded-t-3xl  border-white px-6 py-4'>
                                 <div className=' w-full flex gap-4 '>
                                     <div className=' w-[60px]'>
                                         <img
@@ -82,11 +82,11 @@ const Compliment = () => {
                                         <hr className=' my-1 w-full' />
                                     </div>
                                 </div>
-                                <BsQuote className=' mt-1 text-cyan-400' />
-                                <p className=' my-1 text-wrap'>
+                                <BsQuote className=' mt-1 text-primary' />
+                                <p className='  line-clamp-2 my-1 text-wrap'>
                                     {ele.comment}
                                 </p>
-                                <BsQuote className='flex justify-end rotate-180  text-cyan-400' />
+                                <BsQuote className='flex justify-end rotate-180  text-primary' />
 
                             </div>
                         </JackInTheBox>
@@ -94,6 +94,7 @@ const Compliment = () => {
 
                 </div>
             
+        </div>
         </div>
     )
 }

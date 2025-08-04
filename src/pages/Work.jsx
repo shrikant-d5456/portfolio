@@ -21,14 +21,15 @@ const Work = () => {
   }
 
   return (
-    <>
+    <div className=' dark:bg-black dark:text-white py-8'>
 
-      <div id='experience' className='lg:w-8/12 w-11/12 flex-col m-auto mt-[10%]'>
+      <div id='experience' className='lg:w-8/12 w-11/12 flex-col m-auto mt-[10%]  '>
 
-        <BgBlur />
-        <p className='text-2xl font-extrabold  '>Work Experience & Internship ⚒️💼</p><hr className='mt-4' />
+        {/* <BgBlur /> */}
+        <p className='text-2xl font-extrabold  '>Work Experience & Internship </p><hr className=' mt-4 ' />
+        <div className='dot dark:shadow w-fit relative bottom-[11px]'></div>
 
-        <div className="bg-gradient-to-r from-[#3dc2da] via-[#0387a4] to-[#31aac5] p-8 rounded-lg text-white my-4">
+        <div className="bg-gradient-to-r from-primary/50 via-primary/90 to-primary dark:from-white/50 dark:via-white/50 dark:to-white/50 p-8 rounded-lg text-white my-4">
           <h1 className="text-3xl font-bold mb-4">Transformative</h1>
           <p className="text-lg">"Internships are like stepping stones on the path of your career; each one brings you closer to your goals, enriches your knowledge, and transforms your potential into reality."</p>
         </div>
@@ -43,9 +44,9 @@ const Work = () => {
                   <div className='bluedot '></div>
                 </div>
 
-                <div className=' border-dashed border-[1px] border-white  dark:border-black  w-full'></div>
+                <div className=' border-dashed border-[1px] animate-pulse border-black dark:border-white  w-full'></div>
 
-                <div className='border-2 border-white rounded-full mr-4'>
+                <div className='border-2 dark:border-white   rounded-full mr-4'>
                   <div className='bluedot '></div>
                 </div>
                 <p className=' text-nowrap'>{element.end}</p>
@@ -53,24 +54,24 @@ const Work = () => {
 
               <div className='flex w-full justify- items-center gap-4'>
 
-                <div className='lg:w-[50px] lg:h-[50px]  w-[50px] h-[50px] border-4 p-1  border-[#8beaff] rounded-full'
+                {/* <div className='lg:w-[50px] lg:h-[50px]  w-[50px] h-[50px] border-4 p-1  border-primary rounded-full'
                 >
                   <a href={element?.webLink} target='self' title='Go to Website'>
                     <img
                       className='w-full h-full object-cover rounded-full text-sm '
                       src={element?.img}  alt='loading' />
                   </a>
-                </div>
+                </div> */}
 
                 <div>
                   <p className=' text-xl font-semibold'>{element.company_name}</p>
-                  <p className=' text-sm  bg-[#196c7f] py-[1px] rounded-full text-white w-fit px-4  '>{element.role}</p>
+                  <p className=' text-xs  bg-primary py-[1px] rounded-full text-white w-fit px-4   '>{element.role}</p>
                 </div>
 
               </div>
 
               <div className=' mt-4 mx-2 flex justify-start items-center gap-4 '>
-                <div className='dot dark:shadow p-1 mx-4 md:block hidden'></div>
+                {/* <div className='dot dark:shadow p-1 mx-4 md:block hidden'></div> */}
                 <p className='lg:text-base text-sm text-justify tracking-wide'>
                   {element.desc}
                 </p>
@@ -78,7 +79,7 @@ const Work = () => {
               {
                 element.documentLink &&
                 <a href={element.documentLink}  target='self'>
-                <button className=' bg-cyan-500  hover:bg-cyan-600 py-1 px-4 my-2 transition-all text-sm text-white rounded-full flex justify-center items-center gap-2'>See Documents <BsArrowBarRight className=' text-sm font-extrabold' /></button>
+                <button className=' bg-primary  hover:bg-primary py-1 px-4 my-2 transition-all text-sm text-white rounded-full flex justify-center items-center gap-2 animate-pulse'>See Documents <BsArrowBarRight className=' text-sm font-extrabold' /></button>
                 </a>
                 }
             </div>
@@ -89,13 +90,13 @@ const Work = () => {
           <div className=' w-full flex justify-end items-center'>
             <button
               onClick={displaySkill}
-              className=' my-2 p-4 text-blue-400 hover:text-blue-500'
+              className=' my-2 p-4 text-primary hover:text-primary'
             > {length == 4 ? " ∫ Show All Skills" : " ∬ Show Less"}
             </button>
           </div>
         }
       </div>
-    </>
+    </div>
   )
 }
 export default Work

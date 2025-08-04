@@ -28,7 +28,7 @@ const Navbar = () => {
     const screenWidth = window.innerWidth;
 
     
-    const scrollDistance = screenWidth > 768 ? scrollHeight - 1590 : scrollHeight - 1000;
+    const scrollDistance = screenWidth > 768 ? scrollHeight - 500 : scrollHeight - 1000;
 
     window.scrollTo({
       top: scrollDistance,
@@ -41,20 +41,20 @@ const Navbar = () => {
 
 
   return (
-    <div className='w-full backdrop-blur-[40px]  flex justify-center fixed top-0 z-10'>
-      <div className=' w-full flex items-center justify-start px-8 py-4 font-semibold text-white '>
+    <div className='w-full backdrop-blur-[40px]  flex justify-center fixed top-0 z-10 dark:bg-black dark:text-white'>
+      <div className=' w-full flex items-center justify-start px-8 py-5 font-semibold text-white '>
 
-        <div className=' w-full flex justify-between items-center gap-4 text-white dark:text-black '>
-          <div className='flex justify-center items-center gap-4'>
-          <span className="circle pulse blue"></span>
-          Awailable to Work 🛄
+        <div className=' w-full flex justify-between items-center gap-4 '>
+          <div className='flex justify-center items-center gap-4 dark:text-white text-black '>
+          <span className="circle pulse bg-red-500  "></span>
+          Awailable to Work 
           </div>
           
          
             {showDiv && (
               <div>
                 <Bounce>
-                <button onClick={scrollToBottom} type='submit' className=' bg-cyan-500 hover:bg-cyan-600 font-semibold   py-1 px-4  transition-all text-sm text-white'>Hire Me</button>
+                <button onClick={scrollToBottom} type='submit' className='box  bg-primary hover:bg-primary font-semibold   py-1 px-4  transition-all text-sm text-white'>Hire Me</button>
                 </Bounce>
               </div>
             )}
