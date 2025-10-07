@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import projectData from '../Data/ProjectData';
+import projectData from '../../Data/ProjectData';
 import { BsGithub, BsLink45Deg } from 'react-icons/bs';
 import { Fade, Bounce } from 'react-awesome-reveal';
+import { Helmet } from 'react-helmet-async';
 
 const Card = ({ color, children }) => {
   const [hover, setHover] = useState(false);
@@ -83,7 +84,9 @@ const Card = ({ color, children }) => {
 
 const Project = () => {
   return (
-    <div className="dark:bg-black dark:text-white py-12">
+    <>
+   
+    <div className=" dark:text-white py-12 z-10 relative">
       <div
         id="project"
         className="lg:w-8/12 w-11/12 mx-auto text-sm lg:text-base space-y-8"
@@ -118,6 +121,8 @@ const Project = () => {
       </div>
       
     </div>
+    </>
+   
   );
 };
 

@@ -16,7 +16,6 @@ body {
   /* font-family: "Julius Sans One", sans-serif; */
   font-family: "Montserrat", sans-serif;
   /* "Poppins", sans-serif; */
-  background-color: white;
   background-repeat: no-repeat;  
   cursor: url("./assets/assist.png") ; 
 }
@@ -47,8 +46,6 @@ body {
     transform: translateX(-100%);
   }
 }
-
-
 
 /* live animation */
 .blue {

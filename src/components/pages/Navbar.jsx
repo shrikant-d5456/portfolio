@@ -36,12 +36,8 @@ const Navbar = () => {
     });
   }
 
-  
-
-
-
   return (
-    <div className='w-full backdrop-blur-[40px]  flex justify-center fixed top-0 z-10 dark:bg-black dark:text-white'>
+    <div className='w-full backdrop-blur-[40px]  flex justify-center fixed top-0 z-20 dark:bg-black dark:text-white'>
       <div className=' w-full flex items-center justify-start px-8 py-5 font-semibold text-white '>
 
         <div className=' w-full flex justify-between items-center gap-4 '>

@@ -1,5 +1,4 @@
-import education_data from '../Data/EducationData'
-import React from 'react'
+import education_data from '../../Data/EducationData'
 
 const education = () => {
   return (

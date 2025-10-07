@@ -1,13 +1,11 @@
 import React from 'react'
 import { Bounce, Fade, Flip, Hinge, JackInTheBox, Roll, Rotate, Slide, Zoom } from 'react-awesome-reveal';
 
-
 const Shade = () => {
 
     return (
         <>
-
-            <div className='w-screen h-screen fixed overflow-hidden '>
+            <div className='w-screen h-screen fixed overflow-hidden -z-0 dark:bg-black  '>
                 <Slide direction="left" triggerOnce>
                     <div className=' absolute  left-[-390px] top-1'>
                         <div className=' shade-blue relative left-[130px] top-[-150px] shadow-2xl dark:shadow-white shadow-black'>

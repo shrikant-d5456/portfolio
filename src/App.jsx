@@ -1,41 +1,46 @@
 import React, { lazy, Suspense } from 'react'
-const HeroSection = lazy(() => import('./pages/HeroSection'));
-const Skill = lazy(() => import('./pages/Skill'));
-const Work = lazy(() => import('./pages/Work'));
-const Education = lazy(() => import('./pages/Education'));
-const Project = lazy(() => import('./pages/Project'));
-const Contact = lazy(() => import('./pages/Contact'));
-const Navbar = lazy(() => import('./pages/Navbar'));
-const BgAnime = lazy(() => import('./pages/BgAnime'));
-const Compliment = lazy(() => import('./pages/Compliment'));
-const Header = lazy(() => import('./pages/Header'));
-
+import { Helmet } from 'react-helmet-async';
+const HeroSection = lazy(() => import('./components/pages/HeroSection'));
+const Skill = lazy(() => import('./components/pages/Skill'));
+const Work = lazy(() => import('./components/pages/Work'));
+const Education = lazy(() => import('./components/pages/Education'));
+const Project = lazy(() => import('./components/pages/Project'));
+const Contact = lazy(() => import('./components/pages/Contact'));
+const Navbar = lazy(() => import('./components/pages/Navbar'));
+const Compliment = lazy(() => import('./components/pages/Compliment'));
+const Header = lazy(() => import('./components/pages/Header'));
 const App = () => {
   return (
-
     <>
-      <main className='bg-light-gradient dark:bg-dark-gradient text-light-text dark:text-dark-text'>
-
-
-        <Header/>
-        <Suspense fallback={<div className=' animate-ping w-full h-screen flex justify-center items-center'>Loading..</div>} >
-          <BgAnime />
-          <Navbar />
-          <HeroSection />
-          <Work />
-          <Skill />
-          {/* <Education/> */}
-          <Project />
-          <Compliment />
-          <Contact />
-        </Suspense>
-        {/* <div className='w-full h-full'>
-      <img className='w-full h-full' src="https://accounts.pwskills.com/images/signin-banner.svg" alt="" />
-    </div> */}
-      </main>
+      <Helmet>
+        <title>Shrikant Dalvi | Frontend Developer & Freelancer</title>
+        <meta
+          name="description"
+          content="I'm a passionate Frontend Developer and Freelancer who builds responsive, modern web applications using React, Tailwind CSS, and MERN stack technologies."
+        />
+        <meta
+          name="keywords"
+          content="Frontend Developer, Freelancer, ReactJS, Tailwind CSS, MERN, Web Developer, Portfolio"
+        />
+        <meta name="author" content="Shrikant Dalvi" />
+        <meta property="og:title" content="Shrikant Dalvi | Frontend Developer" />
+        <meta property="og:description" content="Portfolio showcasing projects, skills, and work experience." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://your-portfolio-link.com" />
+        <meta property="og:image" content="https://your-portfolio-link.com/preview.jpg" />
+      </Helmet>
+      <Suspense fallback={<div className=' animate-ping w-full h-screen flex justify-center items-center'>Loading..</div>} >
+        <Header />
+        <Navbar />
+        <HeroSection />
+        <Work />
+        <Skill />
+        {/* <Education/> */}
+        <Project />
+        <Compliment />
+        <Contact />
+      </Suspense>
     </>
   )
 }
-
 export default App
-

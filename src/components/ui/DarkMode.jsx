@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import lightIcon from '../assets/light.png';
-import darkIcon from '../assets/dark.png';
+import lightIcon from '../../assets/light.png';
+import darkIcon from '../../assets/dark.png';
 import {Bounce, Fade, Flip, Hinge, JackInTheBox, Roll, Rotate, Slide, Zoom } from 'react-awesome-reveal';
 
 

@@ -1,19 +1,15 @@
-import React from 'react'
-import DarkMode from './DarkMode'
-import { Bounce, Fade, Flip, Hinge, JackInTheBox, Roll, Rotate, Slide, Zoom } from 'react-awesome-reveal';
-import Shade from './Shade';
-import pdf from '../Data/resume.pdf';
-import img from '../assets/shreeImg.jpeg';
-import { BsGithub, BsLinkedin, BsMailbox2, BsMap, BsMapFill, BsTelegram } from 'react-icons/bs';
-
+import DarkMode from '../ui/DarkMode'
+import { Bounce, Fade, JackInTheBox,Slide} from 'react-awesome-reveal';
+import Shade from '../ui/Shade';
+import img from '../../assets/shreeImg.jpeg';
+import { BsGithub, BsLinkedin, BsMailbox2, BsMapFill, BsWhatsapp } from 'react-icons/bs';
+import about from "../../Data/About";
 
 const Home = () => {
 
   return (
     <>
-
       <Shade />
-
       <div id='about' className='w-full flex-col justify-center items-center pt-[60px] overflow-hidden dark:bg-black dark:text-white '>
         <DarkMode />
         <div className='w-11/12 lg:flex md:flex flex-row justify-center items-center m-auto mb-5'>
@@ -21,8 +17,7 @@ const Home = () => {
           <JackInTheBox triggerOnce>
             <div className='animee lg:w-[300px] h-[300px] w-[300px] md:m-0 m-auto rounded-full  p-4  border-primary scale-90 '
             >
-              <img
-
+              <img loading="lazy"
                 className='h-full w-full object-cover rounded-full '
                 src={img} alt="" />
             </div>
@@ -33,7 +28,13 @@ const Home = () => {
           >
             <Slide direction='up' triggerOnce>
               <p className='text-3xl font-bold mt-4 tracking-wider'>Hey, I'm Shrikant Dalvi</p>
-              <p className='text-xl my-2'>Passionated about <span className='font-extrabold  text-primary dark:text-white'>Frontend Developer</span> and <span className='font-extrabold text-primary dark:text-white'>Ui Designer</span></p>
+              <p className='text-lg my-2' >Passionate
+                <span className='font-extrabold capitalize  text-primary dark:text-white'>
+                  {about[0].heading[0]}
+                </span>
+                & <span className='font-extrabold capitalize  text-primary dark:text-white'>
+                  {about[0].heading[1]}
+                </span> | Freelance Innovator Turning Ideas into Interactive Experiences</p>
             </Slide >
             <div>
               <hr />
@@ -44,18 +45,16 @@ const Home = () => {
             <Slide direction='up' triggerOnce>
               <div className='flex gap-2 items-center '
               ><BsMapFill />
-                <p className='text-md  my-2'>Mangaon, Raigad</p>
+                <p className='text-md  my-2'>Mumbai, India</p>
               </div>
             </Slide>
 
             <div className=' w-full lg:flex-col my-4 font-semibold'>
-              <div className='flex justify-between my-4'>
+              <div className=' grid grid-cols-2 space-y-2 my-4'>
 
                 <Bounce damping={0.1} triggerOnce>
-
                   <a href="mailto:dalvishrikant5456@gmail.com" target="_blank" rel="noopener noreferrer">
-
-                    <div className='  flex justify-center items-center gap-2'>
+                    <div className='flex items-center gap-2 hover:text-orange-600'>
                       <BsMailbox2 className=' text-xl' />
                       <p>Email</p>
                     </div>
@@ -64,18 +63,16 @@ const Home = () => {
 
                 <Bounce damping={0.5} triggerOnce>
                   <a href="https://www.linkedin.com/in/shrikant-dalvi-025ba4318?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">
-                    <div className='  flex justify-center items-center gap-2'>
+                    <div className='  flex  items-center gap-2 hover:text-blue-600'>
                       <BsLinkedin className=' text-xl' />
                       <p>LinkedIn</p>
                     </div>
                   </a>
                 </Bounce>
-              </div >
 
-              <div className=' w-full flex justify-between'>
                 <Bounce damping={0.8} triggerOnce>
                   <a href="https://github.com/shrikant-d5456" target="_blank" rel="noopener noreferrer">
-                    <div className='  flex justify-center items-center gap-2 '>
+                    <div className='  flex  items-center gap-2 hover:text-gray-600'>
                       <BsGithub className=' text-xl' />
                       <p>Github</p>
                     </div>
@@ -83,18 +80,15 @@ const Home = () => {
                 </Bounce>
 
                 <Bounce damping={1} triggerOnce>
-                  <a href="https://telegram.org/dl" target="_blank" rel="noopener noreferrer">
-                    <div className='  flex justify-center items-center gap-2'>
-                      <BsTelegram className=' text-xl' />
-                      <p>Teligram</p>
+                  <a href="https://wa.me/qr/OXX2A3XJPGKXA1" target="_blank" rel="noopener noreferrer">
+                    <div className='  flex  items-center gap-2 hover:text-green-500'>
+                      <BsWhatsapp className=' text-xl' />
+                      <p>Whatsapp</p>
                     </div>
                   </a>
                 </Bounce>
-
-              </div>
-
+              </div >
             </div >
-
           </div >
         </div >
 
@@ -109,12 +103,12 @@ const Home = () => {
               </p>
               <hr className='my-4 border-white' />
               <p>
-                I am a dedicated and passionate frontend developer with a strong foundation in creating user-centric and visually appealing web applications. Currently, I am pursuing a BTech in Information Technology at DBATU University, where I am in my fourth year of study. In addition to my academic pursuits, I am actively engaged in an internship as a frontend developer, working on the Scholarship Management System project. My responsibilities include designing Figma layouts, creating website interfaces, and developing pages using ReactJS.
+                {about[0].desc}
               </p>
 
               <button className=' bg-primary hover:bg-primary/90 box   py-1 mt-2 transition-all text-sm text-white'>
                 {/* <a href={pdf} className='anime px-4 py-1 ' download>Download Resume</a> */}
-                <a href={'https://drive.google.com/file/d/1EUvayGzM_LrnxTWbKowPLfgxWWxu5VdF/view?usp=drivesdk'} className='anime px-4 py-1 ' download>Download Resume</a>
+                <a target='_blank' href={about[0].resume_link} className='anime px-4 py-1 ' download>Download Resume</a>
               </button>
             </div>
           </div>

@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
-import skillData from '../Data/SkillData'
+import skillData from '../../Data/SkillData'
 
 import ReactSpeedometer from "react-d3-speedometer/slim"
 import { Bounce, Fade, Flip, Hinge, JackInTheBox, Roll, Rotate, Slide, Zoom } from 'react-awesome-reveal';
-import BgBlur from './BgBlur';
 import { BsArrowBarRight } from 'react-icons/bs';
 
 
@@ -24,9 +23,8 @@ const Skill = () => {
   }
 
   return (
-    <div className=' dark:bg-black dark:text-white z-20 py-8'>
+    <div className='  dark:text-white py-8 z-10 relative'>
       <div id='skill' className='lg:w-8/12 w-11/12 flex-col m-auto my-4 mt-[10%] text-sm lg:text-base '>
-        {/* <BgBlur /> */}
         <p className='text-2xl font-extrabold  '>Technical Skill's 🧑🏻‍💻 </p><hr className=' mt-4 ' />
         <div className='dot dark:shadow w-fit relative bottom-[11px]'></div>
         

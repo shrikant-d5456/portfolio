@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-import work_data from '../Data/WorkData'
+import work_data from '../../Data/WorkData'
 import { Bounce, Fade, Flip, Hinge, JackInTheBox, Roll, Rotate, Slide, Zoom } from 'react-awesome-reveal';
-import BgBlur from './BgBlur';
 import { BsArrowBarRight } from 'react-icons/bs';
 
 const Work = () => {
@@ -17,19 +16,17 @@ const Work = () => {
       setLength(4);
       setLength(4);
     }
-
   }
 
   return (
-    <div className=' dark:bg-black dark:text-white py-8'>
+    <div className=' dark:text-white py-8 z-10 relative'>
 
       <div id='experience' className='lg:w-8/12 w-11/12 flex-col m-auto mt-[10%]  '>
 
-        {/* <BgBlur /> */}
-        <p className='text-2xl font-extrabold  '>Work Experience & Internship </p><hr className=' mt-4 ' />
+        <p className='text-2xl font-extrabold'>Work Experience & Internship </p><hr className=' mt-4 ' />
         <div className='dot dark:shadow w-fit relative bottom-[11px]'></div>
 
-        <div className="bg-gradient-to-r from-primary/50 via-primary/90 to-primary dark:from-white/50 dark:via-white/50 dark:to-white/50 p-8 rounded-lg text-white my-4">
+        <div className="bg-gradient-to-r from-primary/50 via-primary/90 to-primary dark:from-white/50 dark:via-white/50 dark:to-white/50 p-8 rounded-lg text-white  my-4">
           <h1 className="text-3xl font-bold mb-4">Transformative</h1>
           <p className="text-lg">"Internships are like stepping stones on the path of your career; each one brings you closer to your goals, enriches your knowledge, and transforms your potential into reality."</p>
         </div>
