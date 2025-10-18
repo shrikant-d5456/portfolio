@@ -1,5 +1,7 @@
 import React, { lazy, Suspense } from 'react'
 import { Helmet } from 'react-helmet-async';
+import BgAnime from './components/ui/BgAnime';
+import Loader from './components/ui/Loader';
 const HeroSection = lazy(() => import('./components/pages/HeroSection'));
 const Skill = lazy(() => import('./components/pages/Skill'));
 const Work = lazy(() => import('./components/pages/Work'));
@@ -9,6 +11,8 @@ const Contact = lazy(() => import('./components/pages/Contact'));
 const Navbar = lazy(() => import('./components/pages/Navbar'));
 const Compliment = lazy(() => import('./components/pages/Compliment'));
 const Header = lazy(() => import('./components/pages/Header'));
+const Services = lazy(()=>import('./components/pages/Service'));
+
 const App = () => {
   return (
     <>
@@ -29,13 +33,14 @@ const App = () => {
         <meta property="og:url" content="https://your-portfolio-link.com" />
         <meta property="og:image" content="https://your-portfolio-link.com/preview.jpg" />
       </Helmet>
-      <Suspense fallback={<div className=' animate-ping w-full h-screen flex justify-center items-center'>Loading..</div>} >
+      <Suspense fallback={<Loader/>} >
         <Header />
         <Navbar />
         <HeroSection />
         <Work />
         <Skill />
         {/* <Education/> */}
+        <Services/>
         <Project />
         <Compliment />
         <Contact />

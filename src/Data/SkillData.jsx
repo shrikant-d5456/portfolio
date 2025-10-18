@@ -5,7 +5,7 @@ const skill_data = [
         skill_name: "MongoDb",
         range: 90,
         desc : "",
-        certificate:"",
+        certificate:"https://pwskills.com/learn/certificate/82316003-7516-4875-9fd6-56828f10315a",
     },
     {
         id:9,
@@ -13,14 +13,14 @@ const skill_data = [
         skill_name: "Express",
         range: 88,
         desc : "",
-        certificate:"",
+        certificate:"https://pwskills.com/learn/certificate/82316003-7516-4875-9fd6-56828f10315a/",
     },
     {
         id:8,
         img: "https://www.mindrops.com/images/nodejs-image.webp",
         skill_name: "Node.Js",
         range: 85,
-        certificate:"",
+        certificate:"https://pwskills.com/learn/certificate/82316003-7516-4875-9fd6-56828f10315a/",
     },
     {
         id:7,

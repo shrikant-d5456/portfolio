@@ -2,7 +2,11 @@
 module.exports = {
   
   darkMode: 'class', // IMPORTANT!
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+   content: [
+    "./index.html",
+    "./src/**/*.{js,jsx,ts,tsx}",
+    "node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}",
+  ],
   theme: {
     extend: {
       colors: {
@@ -13,7 +17,7 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("flowbite/plugin")],
 
 };
 //blue primary:'#008bdd', primaryLight:'#e3f1f5',

@@ -7,7 +7,7 @@ const work_data = [
         start:"7 Jan 2025",
         end:"7 June 2025",
         desc: "Collaborated with backend developers to manage and integrate APIs into web applications. Developed intuitive user interfaces using React.js for diverse projects such as JobPortal and Freelancer.Created custom web pages enhancing user engagement and overall site aesthetics. Optimized website performance through code splitting and image optimization, achieving a 10% increase in speed. Engaged in project management and teamwork to ensure timely deliverables and high-quality outcomes.",  
-        documentLink:"",
+        documentLink:"https://drive.google.com/file/d/1MiFD37n0i35xSJhoS8StmVUDG3_yfcRI/view?usp=sharing",
         webLink:"https://github.com/hi-CodingBits/",
     },
     {

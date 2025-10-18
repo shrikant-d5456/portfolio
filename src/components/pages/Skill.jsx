@@ -1,142 +1,93 @@
-import React, { useState } from 'react'
-import skillData from '../../Data/SkillData'
-
-import ReactSpeedometer from "react-d3-speedometer/slim"
-import { Bounce, Fade, Flip, Hinge, JackInTheBox, Roll, Rotate, Slide, Zoom } from 'react-awesome-reveal';
-import { BsArrowBarRight } from 'react-icons/bs';
-
+import React, { useState } from "react";
+import skillData from "../../Data/SkillData";
+import ReactSpeedometer from "react-d3-speedometer/slim";
+import { Slide, Zoom, } from "react-awesome-reveal";
+import { BsArrowBarRight } from "react-icons/bs";
 
 const Skill = () => {
+  const [length, setLength] = useState(10);
+  const [scrolling, setScrolling] = useState(true);
 
-  const [lenght, setLength] = useState(4);
-  const [scrolling, setScolling] = useState(true);
-
-  const displaySkill = () => {
-
-    if (lenght == 4) {
-      setLength(skillData.length)
-    }
-    else {
-      setLength(4);
-      setLength(4);
-    }
-  }
+  const toggleSkills = () => {
+    setLength(length === 10 ? skillData.length : 10);
+  };
 
   return (
-    <div className='  dark:text-white py-8 z-10 relative'>
-      <div id='skill' className='lg:w-8/12 w-11/12 flex-col m-auto my-4 mt-[10%] text-sm lg:text-base '>
-        <p className='text-2xl font-extrabold  '>Technical Skill's 🧑🏻‍💻 </p><hr className=' mt-4 ' />
-        <div className='dot dark:shadow w-fit relative bottom-[11px]'></div>
-        
-        <div className=" dark:from-white/50 dark:via-white/50 dark:to-white/50 bg-gradient-to-r from-primary/50 via-primary/90 to-primary p-8 rounded-lg text-white my-4">
-          <h1 className="text-3xl font-bold mb-4">Continue learning</h1>
-          <p className="text-lg">"Every line of code is a step toward turning ideas into reality. 🌟👨‍💻
-            Embrace the journey of innovation and problem-solving—your potential is limitless!"🚀
-          </p>
-        </div>
-        <div className=' relative flex justify-between items-center z-40'>
-          <div className=' w-full flex justify-end items-center '>
-            <button
-              onClick={() => setScolling(!scrolling)}
-              className='float-right p-1 text-primary dark:text-white hover:text-primary my-4'
-            > {scrolling == true ? " ∫ open" : " ∬ close"}
-            </button>
-          </div>
-        </div>
-
-
-
-        {scrolling == true ?
-
-          <div className=' w-full m-auto overflow-hidden'>
-            <div className='animate-marquee flex gap-8  '>
-              {
-                skillData.map((img, index) => (
-                  <img
-                    key={index}
-                    className=' lg:w-[100px] lg:h-[100px] w-[60px] h-[60px] rounded-full border dark:border-white  object-cover   border-primary lg:p-2 p-1'
-                    src={img.img} alt="" title={img.skill_name}
-                  />
-
-                ))
-
-              }
-            </div>
-          </div>
-
-          :
-          <>
-            {
-              skillData.slice(0, lenght).map((element, index) => (
-                <Slide direction="up" triggerOnce>
-                  <div key={element.id} className='flex-col'>
-                    <span className='w-[100px]  ml-10 lg:ml-14 border-[1px]   border-primary rotate-90'></span>
-
-                    <div className='overflow-hidden w-full lg:flex flex-row justify-center items-center '>
-                      <div className='lg:w-[130px] lg:h-[110px]  w-[80px] h-[80px] rounded-full shadow-md  border-primary dark:border-white  border p-1 '>
-                        <span className='font-semibold absolute justify-center items-center w-[50px] h-[50px] my-4 lg:mx-10 lg:mt-10 rounded-full'>
-
-                          <Zoom triggerOnce>
-                            <ReactSpeedometer
-                              value={element.range * 10}
-                              startColor={'#2E3440'}
-                              endColor={'#4C566A'}
-                              hight={10}
-                              width={100}
-                              ringWidth={10}
-                              needleHeightRatio={0.5}
-                              needleColor={"#a8efff"}
-                              textColor={"#ffffff"}
-                              valueTextFontSize={10}
-                              valueTextFontWeight={"lighter"}
-                            />
-                          </Zoom>
-                        </span>
-                        <img
-                          className='w-full h-full object-cover rounded-full '
-                          src={element.img} alt="" />
-                      </div>
-
-                      <span className='w-20 lg:ml-0 ml-10 border-[1px]  border-primary dark:border-white '></span>
-
-                      <div className='border w-full blur-card dark:bg-gradient-to-r from-primary to-black-200 dark:border-none border-primary dark:border-white  text-center p-2 rounded-sm '>
-
-                        <div className='flex justify-between mx-2 '>
-                          <p className='font-semibold'>{element.skill_name}</p>
-                        </div>
-
-
-                        <hr className='my-1 border-none' />
-
-                        <p className='text-justify '>{element.desc}
-                        </p>
-                        <a href={element.certificate} target='_blank'>
-                          <button className=' bg-primary  hover:bg-primary py-1 px-4 my-2 transition-all text-sm text-white rounded-full flex justify-center items-center gap-2'>See Certificate <BsArrowBarRight className=' text-sm font-extrabold' /></button>
-                        </a>
-                        <div className='dot dark:shadow relative z-10 top-2'></div>
-                      </div>
-                    </div>
-
-                  </div>
-                </Slide>
-
-              ))
-            }
-            <div className=' relative w-full flex justify-end items-center z-30'>
-              <button
-                onClick={displaySkill}
-                className=' my-2 p-4 text-primary hover:text-primary'
-              > {lenght == 4 ? " ∫ Show All Skills" : " ∬ Show Less"}
-              </button>
-            </div>
-          </>
-        }
-
-
-
+    <section
+      id="skill"
+      className="relative py-20 "
+    >
+    {/* Decorative Background Textures */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-40">
+        <div className="absolute top-[10%] left-[-10%] w-[400px] h-[400px] md:bg-blue-400 bg-blue-200   rounded-full blur-3xl"></div>
+        <div className="absolute bottom-[10%] right-[-10%] w-[400px] h-[400px] md:bg-red-400 bg-red-200 rounded-full blur-3xl"></div>
       </div>
-    </div>
-  )
-}
 
-export default Skill
+      <div className="relative  z-10 lg:w-8/12 w-11/12 mx-auto text-gray-900 dark:text-white">
+        {/* Title Section */}
+        <div className="text-center mb-10">
+          <h2 className="text-5xl md:text-6xl font-light  bg-gradient-to-r from-blue-600 to-red-500 bg-clip-text text-transparent">
+            Technical Skills
+          </h2>
+          <p className="text-gray-600 dark:text-gray-400 mt-3 text-base md:text-lg">
+            A showcase of technologies I use to build modern, scalable, and
+            creative web experiences.
+          </p>
+          <div className="mt-4 mx-auto w-24 h-[4px] bg-gradient-to-r from-blue-500 to-red-500 rounded-full"></div>
+        </div>
+
+        {/* Skill Cards */}
+        <div className=" relative flex h-[150px] lg:h-[200px] overflow-scroll  items-center">
+          {skillData.slice(0, length).map((element, index) => (
+            <Slide direction="up" key={element.id}>
+              <div className="group relative grid lg:grid-cols-4  grid-cols-2 ">
+                {/* Skill Image */}
+                <div title={element.skill_name} className="w-[80px] h-[80px] lg:w-[130px] lg:h-[130px] rounded-full shadow-xl border-2 border-gray-200 dark:border-gray-700 overflow-hidden">
+                  <img
+                    src={element.img}
+                    alt={element.skill_name}
+                    className="w-full h-full rounded-full object-cover opacity-90 bg-white p-2 transition-transform duration-300 group-hover:scale-110"
+                  />
+                </div>
+
+                {/* Hover Info */}
+                <div className=" hidden lg:block absolute left-[-10px] top-[-20px] opacity-0 group-hover:opacity-100 group-first:active:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-blue-500 to-red-50/80 rounded-full border border-gray-200 p-5 shadow-md z-20  items-center">
+                  <Zoom>
+                    <ReactSpeedometer
+                      value={element.range * 10}
+                      startColor={'#2E3440'}
+                      endColor={'#4C566A'}
+                      width={120}
+                      height={80}
+                      ringWidth={10}
+                      needleHeightRatio={0.5}
+                      needleColor={"#a8efff"}
+                      textColor={"#a8efff"}
+                      // valueTextFontSize={10}
+                      valueTextFontWeight={"lighter"}
+                    />
+                    {element.certificate && (
+                      <a
+                        href={element.certificate}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex justify-center mt-2"
+                      >
+                        <button className="bg-gray-800/90 hover:bg-gray-600 text-white px-4 py-1.5 rounded-full flex items-center gap-2 text-sm font-medium shadow-md">
+                          Docs <BsArrowBarRight />
+                        </button>
+                      </a>
+                    )}
+                  </Zoom>
+                </div>
+              </div>
+
+            </Slide>
+          ))}
+        </div>
+      </div>
+    </section >
+  );
+};
+
+export default Skill;

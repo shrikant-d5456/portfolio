@@ -1,80 +1,34 @@
-import React, { useState } from 'react';
-import projectData from '../../Data/ProjectData';
-import { BsGithub, BsLink45Deg } from 'react-icons/bs';
-import { Fade, Bounce } from 'react-awesome-reveal';
-import { Helmet } from 'react-helmet-async';
+import React from "react";
+import projectData from "../../Data/ProjectData";
+import { BsGithub, BsLink45Deg } from "react-icons/bs";
 
-const Card = ({ color, children }) => {
-  const [hover, setHover] = useState(false);
-  const [rotate, setRotate] = useState({ x: 0, y: 0 });
-
-  const handleMouseMove = (e) => {
-    const card = e.currentTarget;
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left; // Mouse X inside card
-    const y = e.clientY - rect.top;  // Mouse Y inside card
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-
-    const rotateX = ((y - centerY) / centerY) * 10; // max 10deg
-    const rotateY = ((x - centerX) / centerX) * 10;
-
-    setRotate({ x: rotateX, y: rotateY });
-  };
-
-  const handleMouseLeave = () => {
-    setRotate({ x: 0, y: 0 });
-    setHover(false);
-  };
-
+const Card = ({ project }) => {
   return (
-    <div
-      className="perspective"
-      style={{ perspective: '1000px' }}
-    >
-      <div
-        className="relative hover:box   overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 ease-in-out group"
-        style={{
-          backgroundColor: color,
-          transform: `rotateX(${rotate.x}deg) rotateY(${rotate.y}deg)`,
-          transformStyle: 'preserve-3d',
-          transition: hover ? 'transform 0.1s ease' : 'transform 0.5s ease',
-        }}
-        onMouseMove={handleMouseMove}
-        onMouseEnter={() => setHover(true)}
-        onMouseLeave={handleMouseLeave}
-      >
-        {/* Project Image */}
+    <div className="flex-shrink-0 w-60 gap-4 md:w-72 lg:w-80 relative group mx-2">
+      <div className="relative overflow-hidden  shadow-xl  transition-transform duration-500 transform-gpu hover:scale-105">
         <img
-          className="h-60 w-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out"
-          src={children.img}
-          alt={children.projectName}
+          src={project.img}
+          alt={project.projectName}
+          className="h-48 md:h-52 w-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
-
-        {/* Overlay */}
-        <div
-          className={`absolute inset-0 flex flex-col justify-between bg-black/50 transition-opacity duration-500 ease-in-out ${hover ? 'opacity-100' : 'opacity-0'
-            }`}
-        >
-          {/* Top Icons */}
-          <div className="flex justify-between p-4">
-            <a href={children.gitLink} target="_blank" rel="noopener noreferrer">
-              <div className="bg-black/70 p-2 rounded-full hover:bg-black/90 transition">
+        <div className="absolute inset-0 flex flex-col justify-between bg-blue-500/80  p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          
+          <div className="flex justify-between">
+            <a href={project.gitLink} target="_blank" rel="noopener noreferrer">
+              <div className="bg-black/70 dark:bg-gray-800 p-2 rounded-full hover:bg-black/90 dark:hover:bg-gray-700 transition">
                 <BsGithub className="text-xl text-white" />
               </div>
             </a>
-            {children.webLink && (
-              <a href={children.webLink} target="_blank" rel="noopener noreferrer">
-                <div className="bg-black/70 p-2 rounded-full hover:bg-black/90 transition">
+            {project.webLink && (
+              <a href={project.webLink} target="_blank" rel="noopener noreferrer">
+                <div className="bg-black/70 dark:bg-gray-800 p-2 rounded-full hover:bg-black/90 dark:hover:bg-gray-700 transition">
                   <BsLink45Deg className="text-xl text-white" />
                 </div>
               </a>
             )}
           </div>
-
-          {/* Project Name */}
-          <div className="bg-black/70 text-white text-center py-3 font-semibold lg:text-sm text-xs">
-            {children.projectName}
+          <div className=" text-white py-2 font-semibold text-sm md:text-base rounded-lg">
+            {project.projectName}
           </div>
         </div>
       </div>
@@ -83,46 +37,82 @@ const Card = ({ color, children }) => {
 };
 
 const Project = () => {
+  // Split projects into two rows
+  const topRow = projectData.filter((_, i) => i % 2 === 0);
+  const bottomRow = projectData.filter((_, i) => i % 2 !== 0);
+
+  // Duplicate rows for seamless scrolling
+  const duplicateTop = [...topRow, ...topRow];
+  const duplicateBottom = [...bottomRow, ...bottomRow];
+
   return (
-    <>
-   
-    <div className=" dark:text-white py-12 z-10 relative">
-      <div
-        id="project"
-        className="lg:w-8/12 w-11/12 mx-auto text-sm lg:text-base space-y-8"
-      >
-        <p className='text-2xl font-extrabold  '>Project Room💡</p>
-        <hr className=' mt-4 ' />
-
-        <div className="dark:from-white/50 dark:via-white/50 dark:to-white/50 bg-gradient-to-r from-primary/50 via-primary/90 to-primary p-8 rounded-lg text-white my-4">
-          <h1 className="text-3xl font-bold mb-4">Skill Unleashed! 🚀</h1>
-          <p className="text-lg">"Every project begins with a spark of imagination and grows into something extraordinary. ✨🚀
-            Dive into the world of creativity and innovation—where possibilities are endless, and ideas come to life!"</p>
-        </div>
-
-        {/* Card Grid */}
-        <div className="grid md:grid-cols-3 grid-cols-2 gap-6">
-          {projectData.map((element, index) => (
-            <Fade key={index} direction="up" triggerOnce>
-              <Card color="#00c8ff">
-                {{
-                  gitLink: element.gitLink,
-                  webLink: element.webLink,
-                  projectName: element.projectName,
-                  img: element.img,
-                }}
-              </Card>
-            </Fade>
-          ))}
-        </div>
-        <Bounce>
-         <a href="https://github.com/shrikant-d5456" target="_blank" rel="noopener noreferrer"><button  className='box  bg-primary hover:bg-primary font-semibold   py-1 px-4  transition-all text-sm text-white'>See More Project</button></a>
-      </Bounce>
-      </div>
+    <section 
+    id="project"
+    className="relative py-16 my-10 dark:bg-gray-900">
       
-    </div>
-    </>
-   
+      {/* Decorative Background Textures */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-40">
+        <div className="absolute top-[10%] left-[-10%] w-[400px] h-[400px] md:bg-blue-400 bg-blue-200   rounded-full blur-3xl"></div>
+        <div className="absolute bottom-[10%] right-[-10%] w-[400px] h-[400px] md:bg-red-400 bg-red-200 rounded-full blur-3xl"></div>
+      </div>
+
+
+      <div className=" mx-auto text-gray-900 dark:text-white space-y-8">
+        {/* Title */}
+        <div className="text-center">
+          <h2 className="text-5xl md:text-6xl font-light bg-gradient-to-r from-blue-600 to-red-500 bg-clip-text text-transparent">
+            Project Gallery
+          </h2>
+          <p className="mt-3 text-base md:text-lg text-gray-600 dark:text-gray-400">
+            Every project begins with a spark of imagination and grows into something extraordinary.
+          </p>
+          <div className="mt-4 mx-auto w-24 h-[4px] bg-gradient-to-r from-blue-500 to-red-500 rounded-full"></div>
+
+        </div>
+
+        {/* Top Row Infinite Scroll */}
+        <div className="overflow-hidden relative">
+          <div className="flex animate-scroll-left">
+            {duplicateTop.map((project, index) => (
+              <Card key={index} project={project} />
+            ))}
+          </div>
+        </div>
+
+        {/* Bottom Row Infinite Scroll (reverse) */}
+        <div className="overflow-hidden relative">
+          <div className="flex animate-scroll-right">
+            {duplicateBottom.map((project, index) => (
+              <Card key={index} project={project} />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Custom Scroll Animations */}
+      <style>
+        {`
+        @keyframes scroll-left {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        @keyframes scroll-right {
+          0% { transform: translateX(-50%); }
+          100% { transform: translateX(0); }
+        }
+        .animate-scroll-left {
+          display: flex;
+          width: max-content;
+          animation: scroll-left 40s linear infinite;
+        }
+        .animate-scroll-right {
+          display: flex;
+          width: max-content;
+          animation: scroll-right 40s linear infinite;
+        }
+        `}
+      </style>
+    </section>
   );
 };
 

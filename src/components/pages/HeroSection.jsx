@@ -1,121 +1,89 @@
-import DarkMode from '../ui/DarkMode'
-import { Bounce, Fade, JackInTheBox,Slide} from 'react-awesome-reveal';
-import Shade from '../ui/Shade';
-import img from '../../assets/shreeImg.jpeg';
-import { BsGithub, BsLinkedin, BsMailbox2, BsMapFill, BsWhatsapp } from 'react-icons/bs';
-import about from "../../Data/About";
-
+import React from "react";
+import { BsEnvelopeAt, BsGithub, BsLinkedin, BsMailbox, BsMailbox2, BsMailboxFlag, BsWhatsapp } from "react-icons/bs";
+import img from "../../assets/shreeImg.jpeg";
+import about from '../../Data/About'
 const Home = () => {
-
   return (
-    <>
-      <Shade />
-      <div id='about' className='w-full flex-col justify-center items-center pt-[60px] overflow-hidden dark:bg-black dark:text-white '>
-        <DarkMode />
-        <div className='w-11/12 lg:flex md:flex flex-row justify-center items-center m-auto mb-5'>
+    <section
+      id="about"
+      className="relative w-full h-screen flex flex-col justify-center items-center text-center overflow-hidden
+       transition-all duration-500 bg-white"
+    >
+      {/* Decorative Background Textures */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-40">
+        <div className="absolute top-[10%] left-[-10%] w-[400px] h-[400px] md:bg-blue-400 bg-blue-200 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-[10%] right-[-10%] w-[400px] h-[400px] md:bg-red-400 bg-red-200 rounded-full blur-3xl"></div>
+      </div>
 
-          <JackInTheBox triggerOnce>
-            <div className='animee lg:w-[300px] h-[300px] w-[300px] md:m-0 m-auto rounded-full  p-4  border-primary scale-90 '
-            >
-              <img loading="lazy"
-                className='h-full w-full object-cover rounded-full '
-                src={img} alt="" />
-            </div>
+      {/* Main Content */}
+      <div className="relative z-10 flex flex-col items-center justify-center px-4">
+        {/* Name / Title */}
 
-          </JackInTheBox>
+        <h1 className="text-5xl md:text-7xl font-light bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">
+          Er. Shrikant Dalvi
+        </h1>
 
-          <div className='lg:w-1/3 md:w-2/3 w-full h-1/2 p-4 font-semibold'
+        {/* Role / Subtitle */}
+        <p className="text-xl md:text-2xl font-medium text-gray-600  mb-8">
+          Software Developer
+        </p>
+
+        {/* Profile Image */}
+        <img
+          src={img}
+          alt="Shrikant Dalvi"
+          className=" w-28 h-28 md:w-32 md:h-32 object-cover rounded-full border-4 border-white dark:border-gray-700 shadow-[0_4px_40px_rgba(0,0,0,0.2)] hover:scale-105 transition-transform duration-300"
+        />
+        <div className=" anime mt-2 mx-auto w-24 h-[4px] bg-gradient-to-r from-blue-500 to-red-500 rounded-full"></div>
+
+        {/* Social Links */}
+        <div className="flex gap-6 mt-10 text-gray-700 text-3xl">
+          <a
+            href="mailto:dalvishrikant5456@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-orange-500 hover:scale-110 transition-transform duration-200"
           >
-            <Slide direction='up' triggerOnce>
-              <p className='text-3xl font-bold mt-4 tracking-wider'>Hey, I'm Shrikant Dalvi</p>
-              <p className='text-lg my-2' >Passionate
-                <span className='font-extrabold capitalize  text-primary dark:text-white'>
-                  {about[0].heading[0]}
-                </span>
-                & <span className='font-extrabold capitalize  text-primary dark:text-white'>
-                  {about[0].heading[1]}
-                </span> | Freelance Innovator Turning Ideas into Interactive Experiences</p>
-            </Slide >
-            <div>
-              <hr />
-              <div className='dot an dark:shadow w-fit relative bottom-[11px]'></div>
-            </div>
+            <BsEnvelopeAt />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/shrikant-dalvi-025ba4318"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:scale-110 transition-transform duration-200"
+          >
+            <BsLinkedin />
+          </a>
+          <a
+            href="https://github.com/shrikant-d5456"
+            target="_blank"
+            rel="noopener noreferrer"
+            className=" text-gray-900 hover:scale-110 transition-transform duration-200"
+          >
+            <BsGithub />
+          </a>
+          <a
+            href="https://wa.me/qr/OXX2A3XJPGKXA1"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-green-500 hover:scale-110 transition-transform duration-200"
+          >
+            <BsWhatsapp />
+          </a>
+        </div>
 
+        {/* Optional Footer Tagline */}
+        <p className="mt-8 md:w-8/12 text-gray-800 dark:text-gray-400 text-sm text-justify md:text-center">
+          {about[0].desc}
+        </p>
+        <a 
+        href="https://drive.google.com/file/d/19ivrphQ-Xn9MGuwPeT7StM6bJx44Via6/view?usp=drive_link" 
+        target="_blank">
+          <button className=" box px-4 py-1 my-2">My Resume</button>
+        </a>
+      </div>
+    </section>
+  );
+};
 
-            <Slide direction='up' triggerOnce>
-              <div className='flex gap-2 items-center '
-              ><BsMapFill />
-                <p className='text-md  my-2'>Mumbai, India</p>
-              </div>
-            </Slide>
-
-            <div className=' w-full lg:flex-col my-4 font-semibold'>
-              <div className=' grid grid-cols-2 space-y-2 my-4'>
-
-                <Bounce damping={0.1} triggerOnce>
-                  <a href="mailto:dalvishrikant5456@gmail.com" target="_blank" rel="noopener noreferrer">
-                    <div className='flex items-center gap-2 hover:text-orange-600'>
-                      <BsMailbox2 className=' text-xl' />
-                      <p>Email</p>
-                    </div>
-                  </a>
-                </Bounce>
-
-                <Bounce damping={0.5} triggerOnce>
-                  <a href="https://www.linkedin.com/in/shrikant-dalvi-025ba4318?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">
-                    <div className='  flex  items-center gap-2 hover:text-blue-600'>
-                      <BsLinkedin className=' text-xl' />
-                      <p>LinkedIn</p>
-                    </div>
-                  </a>
-                </Bounce>
-
-                <Bounce damping={0.8} triggerOnce>
-                  <a href="https://github.com/shrikant-d5456" target="_blank" rel="noopener noreferrer">
-                    <div className='  flex  items-center gap-2 hover:text-gray-600'>
-                      <BsGithub className=' text-xl' />
-                      <p>Github</p>
-                    </div>
-                  </a>
-                </Bounce>
-
-                <Bounce damping={1} triggerOnce>
-                  <a href="https://wa.me/qr/OXX2A3XJPGKXA1" target="_blank" rel="noopener noreferrer">
-                    <div className='  flex  items-center gap-2 hover:text-green-500'>
-                      <BsWhatsapp className=' text-xl' />
-                      <p>Whatsapp</p>
-                    </div>
-                  </a>
-                </Bounce>
-              </div >
-            </div >
-          </div >
-        </div >
-
-
-        {/* //About Section */}
-
-        < Fade >
-          <div className='w-full flex justify-center items-center'>
-            <div className='box bg-gradient-to-r from-primary/50 via-primary/90 to-primary  dark:bg-gradient-to-r dark:from-white/50 dark:via-white/50 dark:to-white/50 text-white lg:w-2/3 text-center p-4 backdrop-blur shadow-lg '>
-              <p className='text-2xl font-extrabold'>
-                About Me
-              </p>
-              <hr className='my-4 border-white' />
-              <p>
-                {about[0].desc}
-              </p>
-
-              <button className=' bg-primary hover:bg-primary/90 box   py-1 mt-2 transition-all text-sm text-white'>
-                {/* <a href={pdf} className='anime px-4 py-1 ' download>Download Resume</a> */}
-                <a target='_blank' href={about[0].resume_link} className='anime px-4 py-1 ' download>Download Resume</a>
-              </button>
-            </div>
-          </div>
-        </Fade >
-      </div >
-    </>
-  )
-}
-
-export default Home
+export default Home;

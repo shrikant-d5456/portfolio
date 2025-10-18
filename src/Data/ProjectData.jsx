@@ -64,7 +64,11 @@ const projectData = [
     img: transaction,
     projectName: "Expense Tracker App"
   },
- 
+ {
+    gitLink: "https://github.com/shrikant-d5456/Cloudcredits/tree/main/src/QR-code-generator",
+    img: student,
+    projectName: "Student Attendance System"
+  },
 ];
 
 export default projectData;
