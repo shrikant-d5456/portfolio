@@ -49,12 +49,50 @@ const Contact = () => {
                 name="message"
                 required
               />
-              <button
-                type="submit"
-                className="mt-2 box hover:bg-gradient-to-r hover:text-white from-blue-600 to-red-500 font-semibold px-6 py-2 transition-all linear duration-500  text-sm text-gray-800  "
-              >
-                Hire Me
-              </button>
+
+              <div className=" flex justify-between items-center">
+                <button
+                  type="submit"
+                  className="mt-2 box hover:bg-gradient-to-r hover:text-white from-blue-600 to-red-500 font-semibold px-6 py-2 transition-all linear duration-500  text-sm text-gray-800  "
+                >
+                  Hire Me
+                </button>
+                {/* Social Links */}
+                <div className="flex gap-6 text-gray-700  text-xl lg:text-3xl">
+                  <a
+                    href="mailto:dalvishrikant5456@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-orange-500 hover:scale-110 transition-transform duration-200"
+                  >
+                    <BsEnvelopeAt />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/shrikant-dalvi-025ba4318"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:scale-110 transition-transform duration-200"
+                  >
+                    <BsLinkedin />
+                  </a>
+                  <a
+                    href="https://github.com/shrikant-d5456"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className=" text-gray-900 hover:scale-110 transition-transform duration-200"
+                  >
+                    <BsGithub />
+                  </a>
+                  <a
+                    href="https://wa.me/qr/OXX2A3XJPGKXA1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-green-500 hover:scale-110 transition-transform duration-200"
+                  >
+                    <BsWhatsapp />
+                  </a>
+                </div>
+              </div>
             </form>
           </div>
           {/* Left Section - Video */}
@@ -70,42 +108,7 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className=" flex justify-between my-4 text-gray-800 text-sm mx-4">
-          {/* Social Links */}
-          <div className="flex gap-6 text-gray-700 text-3xl">
-            <a
-              href="mailto:dalvishrikant5456@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-orange-500 hover:scale-110 transition-transform duration-200"
-            >
-              <BsEnvelopeAt />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/shrikant-dalvi-025ba4318"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:scale-110 transition-transform duration-200"
-            >
-              <BsLinkedin />
-            </a>
-            <a
-              href="https://github.com/shrikant-d5456"
-              target="_blank"
-              rel="noopener noreferrer"
-              className=" text-gray-900 hover:scale-110 transition-transform duration-200"
-            >
-              <BsGithub />
-            </a>
-            <a
-              href="https://wa.me/qr/OXX2A3XJPGKXA1"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-green-500 hover:scale-110 transition-transform duration-200"
-            >
-              <BsWhatsapp />
-            </a>
-          </div>
+        <div className=" flex justify-end my-4 text-gray-800 text-sm mx-4">
           <p>All rights reserved &copy; {currentYear}</p>
         </div>
       </div>

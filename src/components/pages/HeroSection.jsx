@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <section
       id="about"
-      className="relative w-full h-screen flex flex-col justify-center items-center text-center overflow-hidden
+      className="relative w-full h-full mt-20 flex flex-col justify-center items-center text-center overflow-hidden
        transition-all duration-500 bg-white"
     >
       {/* Decorative Background Textures */}

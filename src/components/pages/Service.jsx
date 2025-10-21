@@ -2,15 +2,15 @@ import services from "../../Data/Service";
 
 const Services = () => {
     return (
-        <section id="services" className="relative py-16  text-black">
+        <section id="services" className="relative py-10  text-black">
             {/* Top Service Grid */}
-            <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-8 w-11/12 md:w-10/12 mx-auto">
-                {services.slice(0, 3).map((service) => (
+            <div className="mt-12 grid grid-cols-2  gap-8 w-11/12 md:w-10/12 mx-auto">
+                {services.slice(0, 2).map((service) => (
                     <div
                         key={service.title}
                         className="bg-white/30 border border-white z-10 -mb-10 backdrop-blur-md  p-6 flex flex-col items-center text-center transition-all"
                     >
-                        <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                        <p className=" lg:block hidden text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
                             {service.desc}
                         </p>
                         <h3 className="text-xl font-bold mb-3 bg-gradient-to-r from-blue-600 to-red-500 bg-clip-text text-transparent">{service.title}</h3>
@@ -38,14 +38,14 @@ const Services = () => {
             </div>
 
             {/* Bottom Service Grid */}
-            <div className="  grid md:grid-cols-2 lg:grid-cols-2  gap-8 w-11/12 md:w-10/12 mx-auto -mt-10">
+            <div className="  grid grid-cols-2   gap-8 w-11/12 md:w-10/12 mx-auto -mt-10">
                 {services.slice(3, 6).map((service) => (
                     <div
                         key={service.title}
                         className="bg-white/30 border border-white backdrop-blur-md p-6 flex flex-col items-center text-center  transition-all"
                     >
                         <h3 className="text-xl font-bold mb-3 bg-gradient-to-r from-blue-600 to-red-500 bg-clip-text text-transparent">{service.title}</h3>
-                        <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                        <p className=" lg:block hidden text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
                             {service.desc}
                         </p>
                     </div>
