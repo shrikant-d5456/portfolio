@@ -26,7 +26,7 @@ const services = [
   },
   {
     id: 5,
-    title: "Web Optimization",
+    title: "Responsive & Web Optimization",
     desc: "Ensuring all projects are optimized for mobile, tablet, and desktop with fast loading times and smooth responsive layouts.",
     icon: <FaMobileAlt />,
   },

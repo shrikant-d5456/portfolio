@@ -8,12 +8,12 @@ const Services = () => {
                 {services.slice(0, 2).map((service) => (
                     <div
                         key={service.title}
-                        className="bg-white/30 border border-white z-10 -mb-10 backdrop-blur-md  p-6 flex flex-col items-center text-center transition-all"
+                        className="bg-white/30 border border-white z-10 lg:-mb-10 -mb-4 backdrop-blur-md  lg:p-6 p-2 flex flex-col items-center text-center transition-all"
                     >
                         <p className=" lg:block hidden text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
                             {service.desc}
                         </p>
-                        <h3 className="text-xl font-bold mb-3 bg-gradient-to-r from-blue-600 to-red-500 bg-clip-text text-transparent">{service.title}</h3>
+                        <h3 className="lg:text-xl text-sm font-bold lg:mb-3 bg-gradient-to-r from-blue-600 to-red-500 bg-clip-text text-transparent">{service.title}</h3>
                     </div>
                 ))}
             </div>
@@ -42,9 +42,9 @@ const Services = () => {
                 {services.slice(3, 6).map((service) => (
                     <div
                         key={service.title}
-                        className="bg-white/30 border border-white backdrop-blur-md p-6 flex flex-col items-center text-center  transition-all"
+                        className="bg-white/30 border border-white z-10 lg:-mb-10 -mb-4 backdrop-blur-md  lg:p-6 p-2 flex flex-col items-center text-center transition-all"
                     >
-                        <h3 className="text-xl font-bold mb-3 bg-gradient-to-r from-blue-600 to-red-500 bg-clip-text text-transparent">{service.title}</h3>
+                        <h3 className="lg:text-xl text-sm font-bold lg:mb-3 bg-gradient-to-r from-blue-600 to-red-500 bg-clip-text text-transparent">{service.title}</h3>
                         <p className=" lg:block hidden text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
                             {service.desc}
                         </p>
