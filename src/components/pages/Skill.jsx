@@ -6,11 +6,6 @@ import { BsArrowBarRight } from "react-icons/bs";
 
 const Skill = () => {
   const [length, setLength] = useState(10);
-  const [scrolling, setScrolling] = useState(true);
-
-  const toggleSkills = () => {
-    setLength(length === 10 ? skillData.length : 10);
-  };
 
   return (
     <section

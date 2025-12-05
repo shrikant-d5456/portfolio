@@ -1,7 +1,7 @@
 const about = [
     {
         heading: [" Frontend ", " software developer "],
-        desc: "I am a dedicated and passionate frontend developer with a strong foundation in creating user-centric and visually appealing web applications. I graduated from DBATU University with specialization in Information Technology, In addition to my academic pursuits, I am actively engaged in an internship as a frontend developer, working on the Scholarship Management System project. My responsibilities include designing Figma layouts, creating website interfaces, and developing pages using ReactJS.",
+        desc: "Motivated Frontend Developer with strong expertise in ReactJS, JavaScript, and TailwindCSS, currently advancing full-stack skills with the MERN stack. Experienced in building real-world, scalable applications—including government projects, dashboards, AI-powered features, and modern responsive UIs. Passionate about creating clean, user-centric interfaces and continuously improving through hands-on projects and learning.",
         resume_link:"https://drive.google.com/file/d/1IQmOQaiPmb2yYlxne5m6RfWkGNcUbKje/view?usp=sharing"
     }
 ];

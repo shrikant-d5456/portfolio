@@ -53,7 +53,7 @@ const Contact = () => {
               <div className=" flex justify-between items-center">
                 <button
                   type="submit"
-                  className="mt-2 box hover:bg-gradient-to-r hover:text-white from-blue-600 to-red-500 font-semibold px-6 py-2 transition-all linear duration-500  text-sm text-gray-800  "
+                  className="mt-2 box hover:bg-gradient-to-r hover:text-white from-blue-600 to-red-500 font-semibold px-6 py-2 transition-all linear duration-500 text-sm text-gray-800"
                 >
                   Hire Me
                 </button>
@@ -79,7 +79,7 @@ const Contact = () => {
                     href="https://github.com/shrikant-d5456"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className=" text-gray-900 hover:scale-110 transition-transform duration-200"
+                    className="   hover:scale-110 transition-transform duration-200"
                   >
                     <BsGithub />
                   </a>

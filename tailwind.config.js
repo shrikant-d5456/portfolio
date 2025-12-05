@@ -1,25 +1,25 @@
-// tailwind.config.js
-module.exports = {
-  
-  darkMode: 'class', // IMPORTANT!
-   content: [
-    "./index.html",
-    "./src/**/*.{js,jsx,ts,tsx}",
-    "node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}",
+import flowbite from 'flowbite/plugin'
+
+/** @type {import('tailwindcss').Config} */
+export default {
+  darkMode: 'class',
+  content: [
+    './index.html',
+    './src/**/*.{js,jsx,ts,tsx}',
+    'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}',
   ],
   theme: {
     extend: {
       colors: {
-       primary:'black', primaryLight:'#e3f1f5',
-        accent: '#14b8a6',        // Teal-500
-        success: '#22c55e',       // Green-500
-        dark: '#090d13',          // Custom dark
+        primary: 'black',
+        primaryLight: '#e3f1f5',
+        accent: '#14b8a6',
+        success: '#22c55e',
+        dark: '#090d13',
       },
     },
   },
-  plugins: [require("flowbite/plugin")],
-
-};
-//blue primary:'#008bdd', primaryLight:'#e3f1f5',
-//green primary: '#02cd00',  primaryLight: '#e2ffe1',
-//black primary: '#000',  primaryLight: '#e2ffe1',
+  plugins: [
+    flowbite,
+  ],
+}

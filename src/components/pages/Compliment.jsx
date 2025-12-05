@@ -1,5 +1,4 @@
 import React from "react";
-import { BsQuote } from "react-icons/bs";
 import Compliments from "../../Data/ComplimentData";
 import { Fade } from "react-awesome-reveal";
 
@@ -9,7 +8,7 @@ const Compliment = () => {
     >
         {/* Decorative Background Textures */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-40">
-        <div className="absolute top-[10%] left-[-10%] w-[400px] h-[400px] md:bg-blue-400 bg-blue-200   rounded-full blur-3xl"></div>
+        <div className="absolute top-[10%] left-[-10%] w-[400px] h-[400px] md:bg-blue-400 bg-blue-200 rounded-full blur-3xl"></div>
         <div className="absolute bottom-[10%] right-[-10%] w-[400px] h-[400px] md:bg-red-400 bg-red-200 rounded-full blur-3xl"></div>
       </div>
 
@@ -30,7 +29,7 @@ const Compliment = () => {
         {/* Testimonials Grid */}
         <div className="grid md:grid-cols-2  gap-8">
           {Compliments.map((ele, index) => (
-            <Fade key={index} direction="up" triggerOnce>
+            <Fade key={ele.id} direction="up" triggerOnce>
               <div className="relative rounded-2xl bg-gradient-to-br from-white/70 to-white/30 dark:from-gray-800/40 dark:to-gray-900/20 backdrop-blur-lg border border-gray-200 dark:border-white/10 shadow-xl p-6 hover:scale-[1.03] transition-transform duration-300">
                 
                 {/* User Info */}

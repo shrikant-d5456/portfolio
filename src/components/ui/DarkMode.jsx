@@ -34,7 +34,6 @@ const DarkMode = () => {
       src={theme ? lightIcon : darkIcon}
       alt="Toggle Dark Mode"
       onClick={toggleTheme}
-
       title={theme ? 'Switch to Night' : 'Switch to Morning'}
     />
     </Fade>

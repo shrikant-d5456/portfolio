@@ -3,9 +3,7 @@ import { BsXCircleFill } from 'react-icons/bs'
 import { Bounce, Fade, Flip, Hinge, JackInTheBox, Roll, Rotate, Slide, Zoom } from 'react-awesome-reveal';
 import BgAnime from './BgAnime';
 
-const bannerImg = "https://as1.ftcdn.net/v2/jpg/04/62/37/12/1000_F_462371254_N3lHXZmTJevYzLvwkKFaWs3RUyDuRecK.jpg";
-// const bannerImg = "";
-
+const bannerImg = "https://copilot.microsoft.com/th/id/BCO.34f41fdf-e984-4dec-930b-9aebf6cbe935.png";
 const Banner = ({ hide, setHide }) => {
     return (
         <div className={`${!hide && "hidden "} w-full h-screen fixed flex justify-center items-center bg-gradient-to-tr from-black via-slate-900 to-slate-800 z-50 `} >

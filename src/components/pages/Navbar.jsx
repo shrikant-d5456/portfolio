@@ -48,11 +48,11 @@ const Navbar = () => {
     <>
     <Banner hide={hide} setHide={setHide} className={`${!hide && "hidden "}`} />
     <div className={`${!hide && "fixed "} w-full backdrop-blur-[40px] flex justify-center top-0 z-20 text-gray-800 dark:text-white`}>
-      <div className=' w-full flex items-center justify-start px-8 py-5 font-semibold  '>
+      <div className=' w-full flex items-center justify-start px-8 py-5 font-semibold'>
 
-        <div className=' w-full flex justify-between items-center gap-4 '>
-          <div className='flex justify-center items-center gap-4  '>
-          <span className="circle pulse pulse2 bg-red-500  "></span>
+        <div className=' w-full flex justify-between items-center gap-4'>
+          <div className='flex justify-center items-center gap-4'>
+          <span className="circle pulse pulse2 bg-red-500"></span>
           Awailable to Work 
           </div>
           
@@ -60,7 +60,7 @@ const Navbar = () => {
             {showDiv && (
               <div>
                 <Bounce>
-                <button onClick={scrollToBottom} type='submit' className='box font-semibold   py-1 px-4  transition-all text-sm '>Hire Me</button>
+                <button onClick={scrollToBottom} type='submit' className='box font-semibold py-1 px-4  transition-all text-sm '>Hire Me</button>
                 </Bounce>
               </div>
             )}
