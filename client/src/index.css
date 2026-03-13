@@ -1,0 +1,360 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: black; /* Example */
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+ 
+  background-repeat: no-repeat;  
+  cursor: url("./assets/assist.png") ; 
+}
+
+
+.shade-blue{
+  width: 500px;
+    height: 69px;
+    rotate: 45deg;
+}
+
+.moving {
+  display: flex;
+  position: relative;
+  white-space: nowrap;
+  animation: scroll-horizontal 20s linear infinite;
+}
+
+.moving i {
+  flex-shrink: 0;
+}
+
+@keyframes scroll-horizontal {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* live animation */
+.blue {
+  background: var(--primary);
+}
+
+.violet{
+  background: #f78dff; 
+}
+.center {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+}
+
+.circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  color: red;
+}
+
+.pulse {
+  animation: pulse-animation 1s infinite;
+}
+
+.pulse2 {
+  animation: pulse-animation2 1s infinite;
+}
+
+@keyframes pulse-animation2 {
+  0% {
+    box-shadow: 0 0 0 0px rgb(255, 176, 176);
+    border: 1px solid white;
+  }
+  100% {
+    box-shadow: 0 0 0 10px rgb(255, 255, 255);
+    border: 1px solid white;
+  }
+}
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0px rgb(255, 255, 255);
+    border: 1px solid white;
+  }
+  100% {
+    box-shadow: 0 0 0 10px rgb(255, 167, 167);
+    border: 1px solid white;
+  }
+}
+
+input[type="range"] {
+  accent-color: var(--primary);
+}
+
+.anime {
+  background-size: 400%;
+  background-image: linear-gradient(to right, rgb(0, 102, 255) 10%, #159eff 20%, rgb(255, 0, 179) 30%, #e100ff 40%, rgb(255, 29, 74) 50%, #eb6200 60%, rgb(84, 210, 255)70%, #2365ff 80%, rgb(255, 55, 195) 90%, #ff00ff 100%);
+  animation: shimmer 10s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: 0%;
+  }
+}
+
+
+.box {
+  --angle: 0deg;
+  border: 2px solid;
+  border-image: conic-gradient(from var(--angle), rgb(105, 165, 255), rgb(255, 80, 109)) 1;
+  animation: 5s rotate linear infinite;
+}
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.dot {
+  width: 25px;
+  height: 2px;
+  rotate: -50deg;
+  background-color: rgb(255, 255, 255);
+  animation: 20s goes linear infinite;
+}
+
+@keyframes goes {
+  0% {
+    left: 0%;
+  }
+  
+  100% {
+    left: 100%;
+  }
+}
+
+.bluedot{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  margin: 2px;
+}
+
+.inp {
+  padding: 8px;
+  margin: 8px 0px 8px 8px;
+  outline: none;
+  font-size: small;
+  background-color: transparent;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.container .card {
+  position: relative;
+  width: 290px;
+  height: 250px;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 600px) {
+  .container .card {
+    width: 100%;
+    height: 250px;
+  }
+}
+
+.container .card:before {
+  content: '';
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  transform: translate(-50%, -50%);
+  background: radial-gradient(var(--clr), transparent, transparent);
+  width: 400px;
+  height: 400px;
+  opacity: 0;
+  transition: 0.5s, top 0s, left 0s;
+}
+
+.container .card:hover:before {
+  opacity: 1;
+}
+
+.container .card:after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+}
+
+
+@keyframes animStar {
+  from {
+    transform: translateY(0px);
+  }
+
+  to {
+    transform: translateY(-2000px);
+  }
+}
+
+.lable{
+  display: none;
+}
+
+.label{
+  display: none;
+}
+
+text.current-value{
+  font-size: 10px;
+  fill: rgb(255 255 255);
+}
+
+svg.speedometer{
+  display: flex;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: inline-flex;
+  animation: marquee 15s linear infinite;
+}
+
+.hide-scrollbar::-webkit-scrollbar{
+  display: none;
+}
+
+.hide-scrollbar{
+  -ms-overflow-style:none;
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-hidden::-webkit-scrollbar {
+  display: none;
+}
+.bounce {
+  animation: bounce 8s infinite;
+  transition: all 8s ease;
+}
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+/* Diagonal streaks used in hero */
+.streak-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+.streak {
+  width: 2px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.15) 60%, rgba(255,255,255,0.05) 100%);
+  filter: blur(0.6px);
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.06);
+  opacity: 0.12;
+}
+.streak-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95), rgba(255,255,255,0.2));
+  box-shadow: 0 4px 18px rgba(0,0,0,0.5), 0 0 10px rgba(255,255,255,0.12) inset;
+  margin-left: -6px;
+  transform: translateY(-6px);
+}
+
+/* Buttons used in hero */
+.hero-primary {
+  background-color: #2563eb; /* blue-500 */
+  color: white;
+}
+.hero-secondary {
+  border: 2px solid rgba(148,163,184,0.18); /* gray border */
+  color: #fff;
+}
+
+/* Neon cursor trail effect */
+.neon-cursor-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 60;
+}
+
+.neon-cursor-dot {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: calc(12px - (var(--dot-index) * 0.5px));
+  height: calc(12px - (var(--dot-index) * 0.5px));
+  margin-left: calc((12px - (var(--dot-index) * 0.5px)) * -0.5);
+  margin-top: calc((12px - (var(--dot-index) * 0.5px)) * -0.5);
+  border-radius: 999px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 140ms ease;
+  background: radial-gradient(circle, rgba(182, 255, 255, 0.98) 0%, rgba(49, 236, 255, 0.78) 45%, rgba(31, 172, 255, 0.4) 100%);
+  box-shadow: 0 0 14px rgba(42, 220, 255, 0.85), 0 0 30px rgba(24, 136, 255, 0.3);
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+.neon-cursor-dot.visible {
+  opacity: calc(1 - (var(--dot-index) / (var(--dot-count) + 2)));
+}
+
+@media (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .neon-cursor-layer {
+    display: none;
+  }
+}
+
