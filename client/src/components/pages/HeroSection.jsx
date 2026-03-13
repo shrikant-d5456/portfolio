@@ -1,6 +1,6 @@
 import React from "react";
 import { BsEnvelopeAt, BsGithub, BsLinkedin, BsMailbox, BsMailbox2, BsMailboxFlag, BsWhatsapp } from "react-icons/bs";
-import img from "../../assets/shreeImg.jpeg";
+import img from "../../assets/shreeimg.jpeg";
 import useApiData from "../../hooks/useApiData";
 import { endpoints } from "../../services/api";
 const Home = () => {
