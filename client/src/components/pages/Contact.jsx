@@ -1,5 +1,6 @@
 import { BsEnvelopeAt, BsGithub, BsLinkedin, BsMailbox2, BsMapFill, BsPhoneFill, BsWhatsapp } from "react-icons/bs";
 import robotVideo from "../../assets/robot.mp4";
+import { Link } from "react-router-dom";
 const Contact = () => {
   const currentYear = new Date().getFullYear();
   return (
@@ -109,7 +110,7 @@ const Contact = () => {
         </div>
 
         <div className=" flex justify-end my-4 text-gray-800 text-sm mx-4">
-          <p>All rights reserved &copy; {currentYear}</p>
+          <p>All rights reserved <Link to="/masteradmin">Shrikant Dalvi</Link> &copy; {currentYear}</p>
         </div>
       </div>
 

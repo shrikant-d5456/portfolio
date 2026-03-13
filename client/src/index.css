@@ -63,7 +63,6 @@ body {
   width: 10px;
   height: 10px;
   border-radius: 100%;
-  color: red;
 }
 
 .pulse {
@@ -76,11 +75,11 @@ body {
 
 @keyframes pulse-animation2 {
   0% {
-    box-shadow: 0 0 0 0px rgb(255, 176, 176);
+    box-shadow: 0 0 0 0px rgb(176, 255, 192);
     border: 1px solid white;
   }
   100% {
-    box-shadow: 0 0 0 10px rgb(255, 255, 255);
+    box-shadow: 0 0 0 10px rgba(224, 255, 218, 0.426);
     border: 1px solid white;
   }
 }
@@ -90,7 +89,7 @@ body {
     border: 1px solid white;
   }
   100% {
-    box-shadow: 0 0 0 10px rgb(255, 167, 167);
+    box-shadow: 0 0 0 10px rgb(255, 255, 255);
     border: 1px solid white;
   }
 }

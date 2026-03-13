@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import {Bounce, Fade, Flip, Hinge, JackInTheBox, Roll, Rotate, Slide, Zoom } from 'react-awesome-reveal';
 import Banner from '../ui/Banner';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
 
@@ -52,7 +53,9 @@ const Navbar = () => {
 
         <div className=' w-full flex justify-between items-center gap-4'>
           <div className='flex justify-center items-center gap-4'>
-          <span className="circle pulse pulse2 bg-red-500"></span>
+        
+          <span className="circle pulse pulse2 bg-green-500"></span>
+         
           Awailable to Work 
           </div>
           
