@@ -1,5 +1,32 @@
 const API_BASE = import.meta.env.VITE_API_URL;
 
+export const API_LOADING_EVENT = "api:loading";
+let pendingRequests = 0;
+
+const emitLoadingState = () => {
+  if (typeof window === "undefined") {
+    return;
+  }
+
+  window.dispatchEvent(
+    new CustomEvent(API_LOADING_EVENT, {
+      detail: { isLoading: pendingRequests > 0 },
+    })
+  );
+};
+
+const withLoading = async (request) => {
+  pendingRequests += 1;
+  emitLoadingState();
+
+  try {
+    return await request();
+  } finally {
+    pendingRequests = Math.max(0, pendingRequests - 1);
+    emitLoadingState();
+  }
+};
+
 export const endpoints = {
   about: `${API_BASE}/about`,
   skills: `${API_BASE}/skills`,
@@ -19,8 +46,10 @@ const parseJson = async (response) => {
 };
 
 export const fetchCollection = async (url) => {
-  const response = await fetch(url);
-  return parseJson(response);
+  return withLoading(async () => {
+    const response = await fetch(url);
+    return parseJson(response);
+  });
 };
 
 const adminHeaders = (credentials) => ({
@@ -30,20 +59,24 @@ const adminHeaders = (credentials) => ({
 });
 
 export const createCollectionItem = async (url, credentials, payload) => {
-  const response = await fetch(url, {
-    method: "POST",
-    headers: adminHeaders(credentials),
-    body: JSON.stringify(payload),
-  });
+  return withLoading(async () => {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: adminHeaders(credentials),
+      body: JSON.stringify(payload),
+    });
 
-  return parseJson(response);
+    return parseJson(response);
+  });
 };
 
 export const deleteCollectionItem = async (url, credentials, id) => {
-  const response = await fetch(`${url}/${id}`, {
-    method: "DELETE",
-    headers: adminHeaders(credentials),
-  });
+  return withLoading(async () => {
+    const response = await fetch(`${url}/${id}`, {
+      method: "DELETE",
+      headers: adminHeaders(credentials),
+    });
 
-  return parseJson(response);
+    return parseJson(response);
+  });
 };
