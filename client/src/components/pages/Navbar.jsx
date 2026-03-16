@@ -57,7 +57,7 @@ const Navbar = () => {
         tooltip &&
         (
           <div className='fixed md:top-4 top-14 w-full z-50 flex justify-center items-center '>
-            <p className=' flex gap-1 text-sm w-fit bg-white border border-gray-300 px-4 py-2 rounded-full lowercase '>Latest Project Uploaded 🚀
+            <p className=' flex gap-1 text-sm w-fit bg-white border border-gray-300 px-4 py-2 rounded-full lowercase '>Newly Added Project Live 🚀
               <a href={latestProject?.webLink} className='text-blue-500 underline' target="_blank" rel="noopener noreferrer">Visit Project</a>
               <BsX className='cursor-pointer text-2xl pl-2 ' onClick={() => setTooltip(false)} />
             </p>
