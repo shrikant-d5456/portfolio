@@ -3,8 +3,8 @@ import loadingGif from "../../assets/loading.gif";
 
 const Loader = ({ fullScreen = true }) => {
   const containerClass = fullScreen
-    ? "fixed inset-0 z-[999] bg-white"
-    : "w-full h-full";
+    ? "fixed inset-0 z-[999] bg-transparent flex items-center justify-center"
+    : "w-full h-screen flex items-center justify-center";
 
   return (
     <div
@@ -13,11 +13,11 @@ const Loader = ({ fullScreen = true }) => {
       aria-live="polite"
       aria-label="Loading"
     >
-      <div className="rounded-2xl bg-white ">
+      <div className="rounded-2xl bg-black ">
         <img
           src={loadingGif}
           alt="Loading"
-          className="h-full w-full object-cover "
+          className="h-screen w-full object-cover "
         />
       </div>
     </div>
