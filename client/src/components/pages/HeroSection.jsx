@@ -1,94 +1,75 @@
 import React from "react";
-import { BsEnvelopeAt, BsGithub, BsLinkedin, BsMailbox, BsMailbox2, BsMailboxFlag, BsWhatsapp } from "react-icons/bs";
-import img from "../../assets/myimg.jpeg";
-import useApiData from "../../hooks/useApiData";
-import { endpoints } from "../../services/api";
+import { BsEnvelopeAt, BsGithub, BsLinkedin, BsWhatsapp } from "react-icons/bs";
+import img from "../../assets/shrikantimg.png";
+import about from "../../Data/About";
+
 const Home = () => {
-  const { data: about } = useApiData(endpoints.about);
   const aboutEntry = about[0] || {};
 
   return (
-    <header id="about" className=" relative lg:h-screen flex items-center justify-center text-white overflow-hidden p-2">
+    <header id="about" className="relative overflow-hidden pt-24 pb-16 sm:pt-28 lg:pt-32">
+      <div className="grid-glow" />
 
-      {/* Decorative Background Textures */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-40">
-        <div className="absolute top-[10%] left-[-10%] w-[400px] h-[400px] md:bg-blue-400 bg-blue-200 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-[10%] right-[-10%] w-[400px] h-[400px] md:bg-red-400 bg-red-200 rounded-full blur-3xl"></div>
-      </div>
-
-      <div className="container mx-auto px-2 lg:px-20 relative z-10">
-        {/* Hero */}
-        <div id="step1" className="mt-32 lg:mt-10 text-left max-w-4xl mx-auto">
-
-          <div className=" w-full flex gap-2 items-center ">
-            <div>
-              <img
-                src={img}
-                alt="Shrikant Dalvi"
-                className=" w-28 h-28 md:w-32 md:h-32 object-cover rounded-full border-4 border-white dark:border-gray-700 hover:scale-105 transition-transform duration-300"
-              />
-              <div className=" anime mt-2 mx-auto w-24 h-[4px] bg-gradient-to-r from-blue-500 to-red-500 rounded-full"></div>
-            </div>
-
-            <div>
-              <h1 className="text-4xl md:text-7xl font-light leading-tight bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text">
-                Er. Shrikant Dalvi
-              </h1>
-              <p className="text-xl md:text-2xl font-medium text-gray-600">
-                Software Developer
-              </p>
-            </div>
-          </div>
-
-
-          <p className="mt-6 text-sm md:text-base text-gray-600 leading-relaxed">
+      <div className="section-shell relative z-10 grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:min-h-[calc(100vh-5rem)]">
+        <div className="max-w-2xl">
+          <span className="section-tag">Available for work</span>
+          <h1 className="section-title mt-6">
+            I design and build <span className="gradient-text">digital experiences</span> people love.
+          </h1>
+          <p className="section-copy mt-6 text-base sm:text-lg">
             {aboutEntry.desc || ""}
           </p>
 
-          <div className=" w-full flex gap-6 mt-5 text-gray-700 text-3xl">
+          <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
-              href="mailto:dalvishrikant5456@gmail.com"
+              href={aboutEntry.resume_link || "#"}
               target="_blank"
-              rel="noopener noreferrer"
-              className="text-orange-500 hover:scale-110 transition-transform duration-200"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center rounded-full border border-cyan-400/30 bg-cyan-400/10 px-5 py-3 text-sm font-semibold text-cyan-100 transition hover:bg-cyan-400/20"
             >
-              <BsEnvelopeAt />
+              Download Resume
             </a>
             <a
-              href="https://www.linkedin.com/in/shrikant-dalvi-025ba4318"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:scale-110 transition-transform duration-200"
+              href="#project"
+              className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-slate-100 transition hover:bg-white/10"
             >
-              <BsLinkedin />
-            </a>
-            <a
-              href="https://github.com/shrikant-d5456"
-              target="_blank"
-              rel="noopener noreferrer"
-              className=" text-gray-900 hover:scale-110 transition-transform duration-200"
-            >
-              <BsGithub />
-            </a>
-            <a
-              href="https://wa.me/qr/OXX2A3XJPGKXA1"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-green-500 hover:scale-110 transition-transform duration-200"
-            >
-              <BsWhatsapp />
+              View Projects
             </a>
           </div>
-          <a
-            href={aboutEntry.resume_link || "#"}
-            target="_blank">
-            <button className=" box px-4 py-1 mt-5 text-gray-600">My Resume</button>
-          </a>
+
+          <div className="mt-8 flex items-center gap-4 text-2xl text-slate-200">
+            <a href="mailto:dalvishrikant5456@gmail.com" target="_blank" rel="noreferrer" className="rounded-full border border-white/10 bg-white/5 p-3 transition hover:-translate-y-0.5 hover:bg-white/10"><BsEnvelopeAt /></a>
+            <a href="https://www.linkedin.com/in/shrikant-dalvi-025ba4318" target="_blank" rel="noreferrer" className="rounded-full border border-white/10 bg-white/5 p-3 transition hover:-translate-y-0.5 hover:bg-white/10"><BsLinkedin /></a>
+            <a href="https://github.com/shrikant-d5456" target="_blank" rel="noreferrer" className="rounded-full border border-white/10 bg-white/5 p-3 transition hover:-translate-y-0.5 hover:bg-white/10"><BsGithub /></a>
+            <a href="https://wa.me/qr/OXX2A3XJPGKXA1" target="_blank" rel="noreferrer" className="rounded-full border border-white/10 bg-white/5 p-3 transition hover:-translate-y-0.5 hover:bg-white/10"><BsWhatsapp /></a>
+          </div>
+        </div>
+
+        <div className="relative flex justify-center lg:justify-end">
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="h-72 w-72 rounded-full bg-gradient-to-r from-cyan-400/30 via-violet-400/20 to-pink-400/30 blur-3xl" />
+          </div>
+
+          <div className="glass-panel relative w-full max-w-md rounded-[2rem] border border-white/10 p-4 shadow-[0_30px_100px_rgba(8,15,33,0.6)]">
+            <div className="rounded-[1.5rem] border border-white/10 bg-slate-950/70 p-3">
+              <div className="flex items-center justify-between px-2 pb-3 text-[10px] uppercase tracking-[0.22em] text-slate-400">
+                <span>Portfolio</span>
+                <span>Frontend Dev</span>
+              </div>
+              <img
+                src={img}
+                alt="Shrikant Dalvi"
+                className="h-[430px] w-full rounded-[1.3rem] object-cover object-center"
+              />
+            </div>
+            <div className="absolute -bottom-4 left-6 rounded-full border border-cyan-300/30 bg-slate-950/80 px-4 py-2 text-sm text-cyan-100 shadow-lg backdrop-blur-md">
+              Er. Shrikant Dalvi
+            </div>
+          </div>
         </div>
       </div>
     </header>
   );
 };
-
 
 export default Home;

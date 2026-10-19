@@ -1,90 +1,105 @@
-import React, { useState } from "react";
-import ReactSpeedometer from "react-d3-speedometer/slim";
-import { Slide, Zoom, } from "react-awesome-reveal";
-import { BsArrowBarRight } from "react-icons/bs";
-import useApiData from "../../hooks/useApiData";
-import { endpoints } from "../../services/api";
+﻿import { useState } from "react";
+import { FaAws, FaCloud, FaCode, FaCss3Alt, FaDatabase, FaDocker, FaGitAlt, FaHtml5, FaJs, FaLinux, FaMicrosoft, FaNodeJs, FaReact, FaSass, FaSearch } from "react-icons/fa";
+import { SiCplusplus, SiCsharp, SiExpress, SiFigma, SiFirebase, SiGithubcopilot, SiGooglecloud, SiMongodb, SiMysql, SiNetlify, SiNextdotjs, SiPostgresql, SiPrisma, SiRender, SiSqlite, SiTailwindcss, SiTypescript, SiVercel, SiWix } from "react-icons/si";
+const categories = ["Frontend", "Backend", "Databases", "Cloud", "Other"];
+
+const stack = [
+  { name: "JavaScript", category: "Frontend", icon: FaJs, active: true },
+  { name: "Next.js 13", category: "Frontend", icon: SiNextdotjs, active: true },
+  { name: "React.js", category: "Frontend", icon: FaReact, active: true },
+  { name: "Node.js", category: "Backend", icon: FaNodeJs, active: true },
+  { name: "HTML", category: "Frontend", icon: FaHtml5, active: true },
+  { name: "Tailwind CSS", category: "Frontend", icon: SiTailwindcss, active: true },
+  { name: "CSS", category: "Frontend", icon: FaCss3Alt, active: true },
+  { name: "Express.js", category: "Backend", icon: SiExpress, active: true },
+  { name: "Mongoose", category: "Databases", icon: SiMongodb, active: true },
+  { name: "Vercel", category: "Cloud", icon: SiVercel, active: true },
+  { name: "MySQL", category: "Databases", icon: SiMysql, active: true},
+  { name: "PostgreSQL", category: "Databases", icon: SiPostgresql, active: true },
+  { name: "SQLite", category: "Databases", icon: SiSqlite, active: true },
+  { name: "MongoDB", category: "Databases", icon: SiMongodb, active: true },
+  { name: "C++ / C", category: "Other", icon: SiCplusplus, active: true },
+  { name: "REST APIs", category: "Backend", icon: FaCode, active: true },
+  { name: "C#", category: "Other", icon: SiCsharp, active: true },
+  { name: "Render", category: "Cloud", icon: SiRender, active: true },
+  { name: "Netlify", category: "Cloud", icon: SiNetlify, active: true },
+  { name: "SEO", category: "Other", icon: FaSearch, active: true },
+  { name: "Wix", category: "Other", icon: SiWix, active: true },
+  { name: "Figma", category: "Other", icon: SiFigma, active: true },
+  { name: "Git & GitHub", category: "Other", icon: FaGitAlt, active: true },
+  { name: "GitHub Copilot", category: "Other", icon: SiGithubcopilot, active: true },
+  { name: "Microsoft Copilot", category: "Other", icon: FaMicrosoft, active: true },
+];
 
 const Skill = () => {
-  const { data: skillData } = useApiData(endpoints.skills);
-  const [length, setLength] = useState(20);
+  const [category, setCategory] = useState("Frontend");
+  const visibleStack = stack;
 
   return (
-    <section
-      id="skill"
-      className="relative py-20 "
-    >
-    {/* Decorative Background Textures */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-40">
-        <div className="absolute top-[10%] left-[-10%] w-[400px] h-[400px] md:bg-blue-400 bg-blue-200   rounded-full blur-3xl"></div>
-        <div className="absolute bottom-[10%] right-[-10%] w-[400px] h-[400px] md:bg-red-400 bg-red-200 rounded-full blur-3xl"></div>
-      </div>
-
-      <div className="relative  z-10 lg:w-9/12 w-11/12 mx-auto text-gray-900 dark:text-white">
-        {/* Title Section */}
-        <div className="text-center mb-10">
-          <h2 className="text-5xl md:text-6xl font-light  bg-gradient-to-r from-blue-600 to-red-500 bg-clip-text text-transparent">
-            Technical Skills
+    <section id="skill" className="relative overflow-hidden  py-20 text-white sm:py-24">
+      
+      <div className="mx-auto w-[min(100%-3rem,1360px)]">
+        <div className="text-left">
+          <span className="section-tag">Skills</span>
+          <h2 className="section-title text-white">
+            Technical <span className="gradient-text">skills</span>
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 mt-3 text-base md:text-lg">
-            A showcase of technologies I use to build modern, scalable, and
-            creative web experiences.
+          <p className="section-copy max-w-2xl">
+            A showcase of technologies I use to build modern, scalable, and creative web experiences.
           </p>
-          <div className="mt-4 mx-auto w-24 h-[4px] bg-gradient-to-r from-blue-500 to-red-500 rounded-full"></div>
         </div>
+        <div className="grid gap-10 lg:grid-cols-[280px_1fr] lg:gap-16 mt-4">
+          
+          <div className="flex items-start justify-between lg:block">
+              <p className="text-2xl font-semibold tracking-tight sm:text-3xl">Skills</p>
+              <span className="mt-1 block text-3xl font-light text-white/60">→</span>
+          </div>
 
-        {/* Skill Cards */}
-        <div className=" relative flex h-[150px] lg:h-[200px] overflow-scroll  items-center">
-          {skillData.slice(0, length).map((element, index) => (
-            <Slide direction="up" key={element._id || element.id || index}>
-              <div className="group relative grid lg:grid-cols-4  grid-cols-2 ">
-                {/* Skill Image */}
-                <div title={element.skill_name} className="w-[80px] h-[80px] lg:w-[130px] lg:h-[130px] rounded-full shadow-xl border-2 bg-white border-gray-200 dark:border-gray-700 overflow-hidden">
-                  <img
-                    src={element.img}
-                    alt={element.skill_name}
-                    className="w-full h-full rounded-full object-cover opacity-90 bg-white p-2 transition-transform duration-300 group-hover:scale-110"
-                  />
-                </div>
+          <div>
+            <div className="flex flex-wrap gap-3">
+              {categories.map((item) => (
+                <button
+                  key={item}
+                  type="button"
+                  onClick={() => setCategory(item)}
+                  className={`rounded-xl px-4 py-2 text-base font-bold transition-all duration-200 ${
+                    category === item
+                      ? "bg-gradient-to-r from-pink-500 to-violet-600 text-white shadow-[0_8px_24px_rgba(217,70,239,0.25)]"
+                      : "glass-panel text-white/90 hover:bg-[#0000]"
+                  }`}
+                >
+                  {item}
+                </button>
+              ))}
+            </div>
 
-                {/* Hover Info */}
-                <div className=" hidden lg:block absolute left-[-10px] top-[-20px] opacity-0 group-hover:opacity-100 group-first:active:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-blue-500 to-red-50/80 rounded-full border border-gray-200 p-5 shadow-md z-20  items-center">
-                  <Zoom>
-                    <ReactSpeedometer
-                      value={element.range * 10}
-                      startColor={'#2E3440'}
-                      endColor={'#4C566A'}
-                      width={120}
-                      height={80}
-                      ringWidth={10}
-                      needleHeightRatio={0.5}
-                      needleColor={"#a8efff"}
-                      textColor={"#a8efff"}
-                      // valueTextFontSize={10}
-                      valueTextFontWeight={"lighter"}
-                    />
-                    {element.certificate && (
-                      <a
-                        href={element.certificate}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex justify-center mt-2"
-                      >
-                        <button className="bg-gray-800/90 hover:bg-gray-600 text-white px-4 py-1.5 rounded-full flex items-center gap-2 text-sm font-medium shadow-md">
-                          Docs <BsArrowBarRight />
-                        </button>
-                      </a>
-                    )}
-                  </Zoom>
-                </div>
-              </div>
+            <div className="mt-14 grid grid-cols-2 gap-x-12 gap-y-5 sm:grid-cols-2 xl:grid-cols-4">
+              {visibleStack.map((item) => {
+                const Icon = item.icon;
+                const emphasized = item.category === category;
 
-            </Slide>
-          ))}
+                return (
+                  <div
+                    key={`${item.category}-${item.name}`}
+                    className={`group flex  min-h-[38px] items-center gap-4 border-b-2 border-[#57575e] pb-2 text-lg transition-colors sm:text-xl ${
+                      emphasized ? "text-white" : "text-[#57575e]"
+                    }`}
+                  >
+                    <Icon className="shrink-0 text-[1.35rem]" />
+                    <span className="whitespace-nowrap text-sm font-bold">{item.name}</span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </div>
-    </section >
+    </section>
   );
 };
 
 export default Skill;
+
+
+
+

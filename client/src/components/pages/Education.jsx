@@ -1,9 +1,6 @@
-import useApiData from "../../hooks/useApiData";
-import { endpoints } from "../../services/api";
+import education_data from "../../Data/EducationData";
 
 const education = () => {
-  const { data: education_data } = useApiData(endpoints.education);
-
   return (
     <>
       <div className='lg:w-8/12 w-11/12 flex-col m-auto my-8 mt-[5%] text-sm lg:text-base'>

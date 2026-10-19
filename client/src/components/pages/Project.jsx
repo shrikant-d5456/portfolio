@@ -1,7 +1,6 @@
 import React from "react";
 import { BsGithub, BsLink45Deg } from "react-icons/bs";
-import useApiData from "../../hooks/useApiData";
-import { endpoints } from "../../services/api";
+import projectData from "../../Data/ProjectData";
 
 import pattern from "../../assets/pattern.png";
 import student from "../../assets/student.jpeg";
@@ -31,43 +30,39 @@ const Card = ({ project }) => {
   const imgSrc = projectImageMap[project?.imageKey] || project?.img || "";
 
   return (
-    <div className="flex-shrink-0 w-60 gap-4 md:w-72 lg:w-80 relative group mx-2 ">
-      <div className="relative overflow-scroll  shadow-xl  transition-transform duration-500 transform-gpu hover:scale-105">
+    <div className="relative mx-3 flex-shrink-0 w-72 md:w-80">
+      <div className="glass-panel group relative overflow-hidden rounded-[1.75rem] border border-white/10 p-3 shadow-[0_24px_80px_rgba(15,23,42,0.45)]">
         <img
           src={imgSrc}
           alt={project?.projectName}
-          className="h-48 md:h-52 w-full object-cover transition-transform duration-500 group-hover:scale-110"
+          className="h-52 w-full rounded-[1.25rem] object-cover transition duration-500 group-hover:scale-105"
         />
-        <div className="absolute w-full h-full inset-0 flex flex-col bg-blue-500/80 justify-between  p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          
+
+        <div className="absolute inset-3 flex flex-col justify-between rounded-[1.25rem] bg-slate-950/80 p-4 opacity-0 transition duration-300 group-hover:opacity-100">
           <div className="flex justify-between">
-            <a href={project?.gitLink} target="_blank" rel="noopener noreferrer">
-              <div className="bg-black/70 dark:bg-gray-800 p-2 rounded-full hover:bg-black/90 dark:hover:bg-gray-700 transition">
-                <BsGithub className="text-xl text-white" />
-              </div>
+            <a href={project?.gitLink} target="_blank" rel="noreferrer">
+              <span className="inline-flex rounded-full bg-white/10 p-2 text-white transition hover:bg-white/20">
+                <BsGithub className="text-xl" />
+              </span>
             </a>
             {project?.webLink && (
-              <a href={project?.webLink} target="_blank" rel="noopener noreferrer">
-                <div className="bg-black/70 dark:bg-gray-800 p-2 rounded-full hover:bg-black/90 dark:hover:bg-gray-700 transition">
-                  <BsLink45Deg className="text-xl text-white" />
-                </div>
+              <a href={project?.webLink} target="_blank" rel="noreferrer">
+                <span className="inline-flex rounded-full bg-white/10 p-2 text-white transition hover:bg-white/20">
+                  <BsLink45Deg className="text-xl" />
+                </span>
               </a>
             )}
           </div>
+
           <div>
-            {
-              project?.skill?.map((tech, idx) => (
-                <span
-                  key={idx} 
-                  className="text-xs  bg-black/70 dark:bg-gray-800 text-white px-2 py-1 mr-1 rounded-full inline-block mb-1"
-                >
+            <div className="mb-2 flex flex-wrap gap-2">
+              {project?.skill?.map((tech, idx) => (
+                <span key={idx} className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.12em] text-slate-200">
                   {tech}
                 </span>
-              ))
-            }
-          </div>
-          <div className=" text-white py-2 font-semibold text-sm md:text-base rounded-lg">
-            {project?.projectName}
+              ))}
+            </div>
+            <div className="text-base font-semibold text-white">{project?.projectName}</div>
           </div>
         </div>
       </div>
@@ -76,61 +71,43 @@ const Card = ({ project }) => {
 };
 
 const Project = () => {
-  const { data: projectData } = useApiData(endpoints.projects);
-
-  // Split projects into two rows
   const topRow = projectData.filter((_, i) => i % 2 === 0);
   const bottomRow = projectData.filter((_, i) => i % 2 !== 0);
-
-  // Duplicate rows for seamless scrolling
   const duplicateTop = [...topRow, ...topRow];
   const duplicateBottom = [...bottomRow, ...bottomRow];
 
   return (
-    <section 
-    id="project"
-    className="relative py-16 my-10 dark:bg-gray-900">
-      
-      {/* Decorative Background Textures */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-40">
-        <div className="absolute top-[10%] left-[-10%] w-[400px] h-[400px] md:bg-blue-400 bg-blue-200 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-[10%] right-[-10%] w-[400px] h-[400px] md:bg-red-400 bg-red-200 rounded-full blur-3xl"></div>
-      </div>
-
-
-      <div className=" mx-auto   dark:text-white space-y-8">
-        {/* Title */}
-        <div className="text-center">
-          <h2 className="text-5xl md:text-6xl font-light bg-gradient-to-r from-blue-600 to-red-500 bg-clip-text text-transparent">
-            Project Gallery
+    <section id="project" className="relative py-20 sm:py-24">
+      <div className="section-shell relative z-10">
+        <div className="text-left">
+          <span className="section-tag">Portfolio</span>
+          <h2 className="section-title text-white">
+            Selected <span className="gradient-text">projects</span>
           </h2>
-          <p className="mt-3 text-base md:text-lg text-gray-600 dark:text-gray-400">
+          <p className="section-copy max-w-3xl">
             Every project begins with a spark of imagination and grows into something extraordinary.
           </p>
-          <div className="mt-4 mx-auto w-24 h-[4px] bg-gradient-to-r from-blue-500 to-red-500 rounded-full"></div>
-
         </div>
 
-        {/* Top Row Infinite Scroll */}
-        <div className="overflow-hidden relative">
-          <div className="flex animate-scroll-left">
-            {duplicateTop.map((project, index) => (
-              <Card key={`${project._id || project.id || "project"}-${index}`} project={project} />
-            ))}
+        <div className="mt-12 space-y-8">
+          <div className="overflow-hidden">
+            <div className="flex animate-scroll-left">
+              {duplicateTop.map((project, index) => (
+                <Card key={`${project._id || project.id || "project"}-top-${index}`} project={project} />
+              ))}
+            </div>
           </div>
-        </div>
 
-        {/* Bottom Row Infinite Scroll (reverse) */}
-        <div className="overflow-hidden relative">
-          <div className="flex animate-scroll-right">
-            {duplicateBottom.map((project, index) => (
-              <Card key={`${project._id || project.id || "project"}-${index}`} project={project} />
-            ))}
+          <div className="overflow-hidden">
+            <div className="flex  animate-scroll-right">
+              {duplicateBottom.map((project, index) => (
+                <Card key={`${project._id || project.id || "project"}-bottom-${index}`} project={project} />
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Custom Scroll Animations */}
       <style>
         {`
         @keyframes scroll-left {
@@ -144,12 +121,12 @@ const Project = () => {
         .animate-scroll-left {
           display: flex;
           width: max-content;
-          animation: scroll-left 40s linear infinite;
+          animation: scroll-left 42s linear infinite;
         }
         .animate-scroll-right {
           display: flex;
           width: max-content;
-          animation: scroll-right 40s linear infinite;
+          animation: scroll-right 42s linear infinite;
         }
         `}
       </style>
